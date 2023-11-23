@@ -15,21 +15,14 @@
             android:layout_height="wrap_content"
             android:orientation="horizontal"
             >
+
             <ImageView
-                android:layout_margin="5dp"
-                android:layout_centerVertical="true"
-                android:src="@drawable/ic_close_img"
                 android:id="@+id/imgv_close"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"/>
+                style="@style/nav_close" />
             <TextView
-                android:layout_toRightOf="@id/imgv_close"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
+                style="@style/nav_text"
                 android:text="장바구니"
-                android:padding="10dp"
-                android:textSize="20dp"
-                android:textStyle="bold"/>
+                />
             <Button
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
