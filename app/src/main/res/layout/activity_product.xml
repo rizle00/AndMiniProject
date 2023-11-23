@@ -1,0 +1,171 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    tools:context=".ProductActivity"
+    style="@style/main_linear"
+   >
+    <RelativeLayout
+        style="@style/top_banner_rel"
+        >
+        <TextView
+            style="@style/top_banner_text"
+            android:text="분식 배달 홈"/>
+        <Button
+            app:backgroundTint="@null"
+            android:background="@drawable/logout"
+            android:id="@+id/btn_logout"
+            style="@style/btn_logout"/>
+    </RelativeLayout>
+    <TextView
+        style="@style/name_text"
+        android:text="분식"
+        />
+
+    <LinearLayout
+        style="@style/menu_linear">
+        <RelativeLayout
+            style="@style/menu_rel">
+            <ImageView
+                style="@style/name_imgv"
+                android:id="@+id/imgv_menu1"
+                android:src="@drawable/ic_launcher_foreground"/>
+            <TextView
+                style="@style/detail_text"
+                android:id="@+id/tv_menu1"
+                android:layout_below="@+id/imgv_menu1"
+                android:text="김밥\n 가격: 4,000원"
+                />
+        </RelativeLayout>
+        <RelativeLayout
+            style="@style/menu_rel">
+            <ImageView
+                style="@style/name_imgv"
+                android:id="@+id/imgv_menu2"
+                android:src="@drawable/ic_launcher_foreground"/>
+            <TextView
+                style="@style/detail_text"
+                android:id="@+id/tv_menu2"
+                android:layout_below="@+id/imgv_menu2"
+                android:text="김밥\n 가격: 4,000원" />
+        </RelativeLayout>
+        <RelativeLayout
+            style="@style/menu_rel">
+            <ImageView
+                style="@style/name_imgv"
+                android:id="@+id/imgv_menu3"
+                android:src="@drawable/ic_launcher_foreground"/>
+            <TextView
+                style="@style/detail_text"
+                android:id="@+id/tv_menu3"
+                android:layout_below="@+id/imgv_menu3"
+                android:text="김밥\n 가격: 4,000원" />
+        </RelativeLayout>
+
+    </LinearLayout>
+
+    <LinearLayout
+        style="@style/menu_linear">
+        <RelativeLayout
+            style="@style/menu_rel">
+            <ImageView
+                style="@style/name_imgv"
+                android:id="@+id/imgv_menu4"
+                android:src="@drawable/ic_launcher_foreground"/>
+            <TextView
+                style="@style/detail_text"
+                android:id="@+id/tv_menu4"
+                android:layout_below="@+id/imgv_menu4"
+                android:text="김밥\n 가격: 4,000원" />
+        </RelativeLayout>
+        <RelativeLayout
+            style="@style/menu_rel">
+            <ImageView
+                style="@style/name_imgv"
+                android:id="@+id/imgv_menu5"
+                android:src="@drawable/ic_launcher_foreground"/>
+            <TextView
+                style="@style/detail_text"
+                android:id="@+id/tv_menu5"
+                android:layout_below="@+id/imgv_menu5"
+                android:text="김밥\n 가격: 4,000원" />
+        </RelativeLayout>
+        <RelativeLayout
+            style="@style/menu_rel">
+            <ImageView
+                style="@style/name_imgv"
+                android:id="@+id/imgv_menu6"
+                android:src="@drawable/ic_launcher_foreground"/>
+            <TextView
+                style="@style/detail_text"
+                android:id="@+id/tv_menu6"
+                android:layout_below="@+id/imgv_menu6"
+                android:text="김밥\n 가격: 4,000원" />
+        </RelativeLayout>
+
+    </LinearLayout>
+    <TextView
+        style="@style/name_text"
+        android:text="음료"
+        />
+
+    <LinearLayout
+        style="@style/menu_linear">
+        <RelativeLayout
+            style="@style/menu_rel">
+            <ImageView
+                style="@style/name_imgv"
+                android:id="@+id/imgv_drink1"
+                android:src="@drawable/ic_launcher_foreground"/>
+            <TextView
+                style="@style/detail_text"
+                android:id="@+id/tv_drink1"
+                android:layout_below="@+id/imgv_drink1"
+                android:text="김밥\n 가격: 4,000원"
+                />
+        </RelativeLayout>
+        <RelativeLayout
+            style="@style/menu_rel">
+            <ImageView
+                style="@style/name_imgv"
+                android:id="@+id/imgv_drink2"
+                android:src="@drawable/ic_launcher_foreground"/>
+            <TextView
+                style="@style/detail_text"
+                android:id="@+id/tv_drink2"
+                android:layout_below="@+id/imgv_drink2"
+                android:text="김밥\n 가격: 4,000원" />
+        </RelativeLayout>
+        <RelativeLayout
+            style="@style/menu_rel">
+            <ImageView
+                style="@style/name_imgv"
+                android:id="@+id/imgv_drink3"
+                android:src="@drawable/ic_launcher_foreground"/>
+            <TextView
+                style="@style/detail_text"
+                android:id="@+id/tv_drink3"
+                android:layout_below="@+id/imgv_drink3"
+                android:text="김밥\n 가격: 4,000원" />
+        </RelativeLayout>
+
+    </LinearLayout>
+    <TextView
+        android:textSize="11dp"
+        android:layout_marginTop="30dp"
+        android:layout_gravity="center_horizontal"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="메뉴를 누르시면 주문하기로 넘어갑니다"/>
+
+    <Button
+
+        android:id="@+id/btn_cart"
+        style="@style/btn_bottom"
+        app:backgroundTint="@null"
+        android:background="@drawable/cart"
+        android:text="주문 목록" />
+
+
+</LinearLayout>
