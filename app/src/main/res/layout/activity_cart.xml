@@ -1,16 +1,12 @@
 <?xml version="1.0" encoding="utf-8"?>
-<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".CartActivity">
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:orientation="vertical"
-        android:background="@color/purple_200">
-        <RelativeLayout
+    tools:context=".CartActivity"
+    android:orientation="vertical">
+   <RelativeLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:orientation="horizontal"
@@ -40,33 +36,24 @@
         android:layout_width="match_parent"
         android:layout_height="1dp"
         android:background="#939393"/>
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1"/>
 
-        <!-- 테스트 코드 -->
-        <LinearLayout
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:id="@+id/testlayout">
-        <ImageView
-            android:id="@+id/testimg"
-            android:src="@drawable/ic_launcher_foreground"
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"/>
-        </LinearLayout>
+    <TableLayout
+        android:layout_weight="1"
+        android:layout_width="match_parent"
+        android:layout_height="0dp">
 
-        <TextView
-            android:id="@+id/testtotal"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            />
+        
+    </TableLayout>
 
 
 
-        <!-- 테스트 끝 -->
-        <Button
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="결제하기"
-            android:id="@+id/payment"/>
-
-    </LinearLayout>
-</ScrollView>
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="결제하기"
+        android:id="@+id/payment"/>
+</LinearLayout>
