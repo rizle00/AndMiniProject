@@ -3,6 +3,8 @@ package com.example.miniproject;
 import java.util.ArrayList;
 
 public class MemberDTO {
+
+
     private String id, pw, address;
     private int money;
     private ArrayList<ProductDTO> cart;
