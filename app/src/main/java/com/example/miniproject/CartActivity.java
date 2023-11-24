@@ -13,8 +13,6 @@ import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.TextView;
 
-import com.example.teamproject.MainActivity;
-import com.example.teamproject.R;
 
 import org.w3c.dom.Text;
 
