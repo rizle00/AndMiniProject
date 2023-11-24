@@ -13,7 +13,9 @@
             android:text="주문하기"/>
         <Button
             android:id="@+id/btn_logout"
-            style="@style/btn_logout"/>
+            style="@style/btn_logout"
+            android:background="@drawable/logout"
+            app:backgroundTint="@null"/>
     </RelativeLayout>
     <LinearLayout
         style="@style/menu_linear">
@@ -87,12 +89,16 @@
             android:layout_width="0dp"
             android:layout_weight="1"
             style="@style/btn_bottom"
+            app:backgroundTint="@null"
+            android:background="@drawable/purchase"
             android:text="주문하기"/>
         <Button
             android:id="@+id/btn_back"
             android:layout_width="0dp"
             android:layout_weight="1"
             style="@style/btn_bottom"
+            app:backgroundTint="@null"
+            android:background="@drawable/back"
             android:text="뒤로가기"/>
     </LinearLayout>
 

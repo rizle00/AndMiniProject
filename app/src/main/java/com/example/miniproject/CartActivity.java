@@ -43,12 +43,12 @@ public class CartActivity extends AppCompatActivity {
             testlayout.setVisibility(View.GONE);
         } */
         /*총액 구하기*/
-        TextView testtv = findViewById(R.id.testtotal);
-        testtv.setText(""+testnum * testprice);
-        btn_payment.setOnClickListener(v -> {
-            Intent intent = new Intent(this, PaymentActivity.class);
-            startActivity(intent);
-        });
+//        TextView testtv = findViewById(R.id.testtotal);
+//        testtv.setText(""+testnum * testprice);
+//        btn_payment.setOnClickListener(v -> {
+//            Intent intent = new Intent(this, PaymentActivity.class);
+//            startActivity(intent);
+//        });
 
 
 
