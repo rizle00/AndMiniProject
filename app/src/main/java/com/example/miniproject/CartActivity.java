@@ -4,6 +4,7 @@ import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.annotation.SuppressLint;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
@@ -22,6 +23,7 @@ import java.util.ListIterator;
 
 public class CartActivity extends AppCompatActivity {
 
+    @SuppressLint("SetTextI18n")
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -39,6 +41,7 @@ public class CartActivity extends AppCompatActivity {
             Intent intent = new Intent(this,MainActivity.class); //전 화면으로 수정해야함
             startActivity(intent);
         });
+
         /*테스트 코드*/
         ArrayList<ProductDTO> list = new ArrayList<>();
         list.add(new ProductDTO("아메리카노","원두를 갈아만든 커피", 3000,10));
@@ -56,31 +59,41 @@ public class CartActivity extends AppCompatActivity {
         ArrayList<ProductDTO> cart = new ArrayList<>();
         cart.add(new ProductDTO("한라봉에이드","제주 한라봉으로 만든 에이드", 5000,1));
                 /*테스트 코드 끝 */
-  /*      if(testnum <1){
-            ImageView testimg = findViewById(R.id.testimg);
-            testimg.setVisibility(View.GONE);
-        }*/
-/*        if(testnum<1){
-            LinearLayout testlayout = findViewById(R.id.testlayout);
-            testlayout.setVisibility(View.GONE);
-        } */
-        /*총액 구하기*/
-        /*TextView testtv = findViewById(R.id.testtotal);*/
-  /*      testtv.setText(""+testnum * testprice);
-        btn_payment.setOnClickListener(v -> {
-            Intent intent = new Intent(this, PaymentActivity.class);
-            startActivity(intent);
-        });*/
 
-        TextView tv_test = findViewById(R.id.testid);
 
+
+        TextView tv_name = findViewById(R.id.name);
+        TextView tv_amount = findViewById(R.id.amount);
+        TextView tv_price = findViewById(R.id.price);
+        int totalprice = 0;
+        String name = "";
         for(int i = 0 ; i < list.size() ; i++) {
-            tv_test.setText(list.get(i).getName());
-        }
+            name = name + list.get(i).getName() +"\n\r";
+            totalprice = totalprice + list.get(i).getPrice()*list.get(i).getQuantity();
+        };
+        tv_name.setText(name);
+        String price = "";
+        for(int i = 0 ; i < list.size() ; i++) {
+            price = price +   list.get(i).getPrice() + "원 " +"\n\r";
+        };
+        tv_price.setText(price);
+        String amouont = "";
+        for(int i = 0 ; i < list.size() ; i++) {
+            amouont = amouont + list.get(i).getQuantity() + "개 " +"\n\r";
+        };
+        tv_amount.setText(amouont);
 
-
-
+        TextView tv_totalprice = findViewById(R.id.totalprice);
+        tv_totalprice.setText("총액 : " + totalprice + "원");
+        btn_payment.setOnClickListener(v -> {
+            Intent intent = new Intent(this , PaymentActivity.class);
+            startActivity(intent);
+        });
+        int finalTotalprice = totalprice;
+        btn_payment.setOnClickListener(v -> {
+            Intent intent = new Intent(this , PaymentActivity.class);
+            dto.setPrice() = finalTotalprice;
+            startActivity(intent);
+        });
     }
-
-
 }
