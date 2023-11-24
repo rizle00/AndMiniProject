@@ -1,0 +1,106 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    tools:context=".DetailActivity"
+    style="@style/main_linear">
+    <RelativeLayout
+        style="@style/top_banner_rel"
+        >
+        <TextView
+            style="@style/top_banner_text"
+            android:text="주문하기"/>
+        <Button
+            android:id="@+id/btn_logout"
+            style="@style/btn_logout"
+            android:background="@drawable/logout"
+            app:backgroundTint="@null"/>
+    </RelativeLayout>
+    <LinearLayout
+        style="@style/menu_linear">
+        <ImageView
+            style="@style/datail_imgv"
+            android:id="@+id/imgv_detail1"
+            android:src="@drawable/ic_launcher_foreground"/>
+        <TextView
+            style="@style/detail_tv"
+            android:id="@+id/tv_detail1"
+            android:text="멸치김밥\n 멸치가 들어간김밥입니다"/>
+        <EditText
+            style="@style/detail_etd"
+            android:id="@+id/edt_text1"/>
+
+    </LinearLayout>
+    <LinearLayout
+        style="@style/menu_linear">
+        <ImageView
+            style="@style/datail_imgv"
+            android:id="@+id/imgv_detail2"
+            android:src="@drawable/ic_launcher_foreground"/>
+        <TextView
+            style="@style/detail_tv"
+            android:id="@+id/tv_detail2"
+            android:text="멸치김밥\n 멸치가 들어간김밥입니다"/>
+        <EditText
+            style="@style/detail_etd"
+            android:id="@+id/edt_text2"/>
+
+    </LinearLayout>
+    <LinearLayout
+        style="@style/menu_linear">
+        <ImageView
+            style="@style/datail_imgv"
+            android:id="@+id/imgv_detail3"
+            android:src="@drawable/ic_launcher_foreground"/>
+        <TextView
+            style="@style/detail_tv"
+            android:id="@+id/tv_detail3"
+            android:text="멸치김밥\n 멸치가 들어간김밥입니다"/>
+        <EditText
+            style="@style/detail_etd"
+            android:id="@+id/edt_text3"/>
+
+    </LinearLayout>
+    <LinearLayout
+        style="@style/menu_linear">
+        <ImageView
+            style="@style/datail_imgv"
+            android:id="@+id/imgv_detail4"
+            android:src="@drawable/ic_launcher_foreground"/>
+        <TextView
+            style="@style/detail_tv"
+            android:id="@+id/tv_detail4"
+            android:text="멸치김밥\n 멸치가 들어간김밥입니다"/>
+        <EditText
+            style="@style/detail_etd"
+            android:id="@+id/edt_text4"/>
+
+    </LinearLayout>
+    <LinearLayout
+        style="@style/menu_linear"
+        android:paddingLeft="40dp"
+        android:paddingRight="40dp"
+        android:layout_marginRight="30dp"
+        android:layout_marginTop="30dp">
+        <Button
+            android:id="@+id/btn_order"
+            android:layout_marginRight="20dp"
+            android:layout_width="0dp"
+            android:layout_weight="1"
+            style="@style/btn_bottom"
+            app:backgroundTint="@null"
+            android:background="@drawable/purchase"
+            android:text="주문하기"/>
+        <Button
+            android:id="@+id/btn_back"
+            android:layout_width="0dp"
+            android:layout_weight="1"
+            style="@style/btn_bottom"
+            app:backgroundTint="@null"
+            android:background="@drawable/back"
+            android:text="뒤로가기"/>
+    </LinearLayout>
+
+
+</LinearLayout>

@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <style name="nav_text">
+        <item name="android:layout_toRightOf">@id/imgv_close</item>
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:padding">10dp</item>
+        <item name="android:textSize">20dp</item>
+        <item name="android:textStyle">bold</item>
+    </style>
+    <style name="nav_close">
+        <item name="android:layout_margin">5dp</item>
+        <item name="android:layout_centerVertical">true</item>
+        <item name="android:src">@drawable/ic_close_img</item>
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">wrap_content</item>
+
+    </style>
+    <style name="bill">
+        <item name="android:background">@color/white</item>
+        <item name="android:layout_margin">1dp</item>
+    </style>
+</resources>
