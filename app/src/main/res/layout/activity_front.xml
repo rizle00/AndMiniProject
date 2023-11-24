@@ -1,0 +1,155 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    android:id="@+id/pageChange"
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".FrontActivity"
+    android:orientation="vertical"
+    >
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <ImageView
+            android:id="@+id/pageImg2_1"
+            android:layout_width="match_parent"
+            android:layout_height="350dp"
+            android:scaleType="fitXY"
+            android:src="@drawable/page2_1" />
+
+        <TextView
+            android:id="@+id/frontTextA"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="150dp"
+            android:backgroundTint="#FFFFFF"
+            android:text="아직도 메뉴 선택ING???"
+            android:textColor="#34146C"
+            android:textSize="90px"
+            android:shadowColor="@color/white"
+            android:shadowDx="-10.0"
+            android:shadowDy="-10.0"
+            android:shadowRadius="2.0"
+
+            android:textStyle="bold" />
+        <TextView
+            android:id="@+id/frontTextB"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="고민 stop!분식특공대로 GO GO~!"
+            android:textStyle="bold"
+            android:textColor="#601FD6"
+            android:layout_below="@+id/frontTextA"
+            android:textSize="55px"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="15dp"
+            />
+
+
+    </RelativeLayout>
+
+
+    <TextView
+        android:id="@+id/frontTextC"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="h i g h t   q u a l i t y!"
+        android:textStyle="bold"
+        android:textColor="#0B514A"
+        android:layout_alignParentLeft="true"
+        android:layout_centerInParent="true"
+        android:textSize="15dp"
+        android:layout_marginTop="10dp"
+        android:layout_gravity="center"
+        />
+    <TextView
+        android:id="@+id/frontTextD"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="이영자도 놀란 맛집!"
+        android:textStyle="bold"
+        android:textColor="#0B514A"
+        android:layout_alignParentLeft="true"
+        android:layout_centerInParent="true"
+        android:textSize="15dp"
+        android:layout_gravity="center"
+
+        />
+
+<LinearLayout
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        >
+
+
+
+        <ImageView
+            android:id="@+id/page2_2"
+            android:layout_width="130dp"
+            android:layout_height="130dp"
+            android:layout_alignParentLeft="true"
+            android:layout_marginLeft="2dp"
+            android:src="@drawable/page2_2"
+            android:scaleType="fitXY"
+            android:layout_marginTop="10dp"
+            />
+
+        <ImageView
+            android:id="@+id/page2_3"
+            android:layout_width="130dp"
+            android:layout_height="130dp"
+            android:src="@drawable/page2_3"
+            android:layout_centerHorizontal="true"
+            android:scaleType="fitXY"
+            android:layout_marginTop="10dp"
+            />
+
+        <ImageView
+            android:id="@+id/page2_4"
+            android:layout_width="130dp"
+            android:layout_height="130dp"
+            android:layout_alignParentRight="true"
+            android:layout_marginTop="10dp"
+            android:layout_marginRight="-29dp"
+            android:scaleType="fitXY"
+            android:src="@drawable/page2_14" />
+
+        <ImageView
+
+            android:id="@+id/page2_5"
+            android:layout_width="match_parent"
+            android:layout_height="170dp"
+            android:layout_alignParentBottom="true"
+            android:layout_centerHorizontal="true"
+            android:scaleType="fitXY"
+            android:src="@drawable/page2_5"
+
+
+            />
+
+
+
+
+    </RelativeLayout>
+
+</LinearLayout>
+</LinearLayout>
+
+
+
+
+
+
+
+
+
+
+

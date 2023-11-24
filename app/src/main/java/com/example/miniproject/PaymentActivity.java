@@ -23,9 +23,10 @@ public class PaymentActivity extends AppCompatActivity {
         TextView tv_change = findViewById(R.id.tv_change);
         Button btn_pay = findViewById(R.id.btn_pay);
         MemberDTO dto = new MemberDTO();
+        ProductDTO pdto = new ProductDTO();
         /* 테스트 데이터*/
         int money = 1000000;
-        int price = 2000;
+        int price ;
         int count = 2;
         String address = "광주광역시 농성동";
         /* 테스트 데이터 끝 */
@@ -35,13 +36,14 @@ public class PaymentActivity extends AppCompatActivity {
             startActivity(intent);
         });
         edt_address.setText(address); //dto.getaddress
-        tv_price.setText(""+price * count);
+        tv_price.setText(pdto.getPrice());
         tv_money.setText(""+money);
         tv_change.setText(""+(money-(price*count)));
         btn_pay.setOnClickListener(v -> {
             Intent intent = new Intent(this,CartActivity.class);
             startActivity(intent);
         });
+
 
 
 

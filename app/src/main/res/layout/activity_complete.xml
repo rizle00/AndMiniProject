@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".CompleteActivity"
+    >
+    <ImageView
+        android:layout_width="match_parent"
+        android:layout_height="350dp"
+        android:src="@drawable/ending"
+        android:scaleType="fitXY"/>
+
+    <ImageView
+        android:id="@+id/imageViewChek"
+        android:layout_width="150dp"
+        android:layout_height="150dp"
+        android:layout_centerInParent="true"
+        android:paddingBottom="70dp"
+        app:srcCompat="@android:drawable/checkbox_on_background" />
+
+    <TextView
+        android:id="@+id/TextViewChek"
+        android:layout_width="match_parent"
+        android:layout_height="70dp"
+        android:text="주문완료"
+        android:textSize="30dp"
+        android:gravity="center"
+        android:textStyle="bold"
+        android:layout_alignBottom="@+id/imageViewChek"
+
+        />
+    <ImageView
+        android:id="@+id/ok"
+        android:layout_width="80dp"
+        android:layout_height="80dp"
+        android:src="@drawable/ok"
+        android:layout_below="@+id/TextViewChek"
+        android:layout_centerHorizontal="true"
+
+        />
+    <Button
+        android:id="@+id/TextViewList"
+        android:layout_width="180dp"
+        android:layout_height="70dp"
+        android:text="주문내역보기"
+        android:textSize="17dp"
+        android:gravity="center"
+        android:textStyle="bold"
+        android:layout_alignParentBottom="true"
+        android:layout_marginLeft="20dp"
+        android:layout_marginBottom="50dp"
+        />
+    <Button
+        android:id="@+id/GoHome"
+        android:layout_width="180dp"
+        android:layout_height="70dp"
+        android:text="홈으로가기"
+        android:textSize="17dp"
+        android:gravity="center"
+        android:textStyle="bold"
+        android:layout_toRightOf="@+id/TextViewList"
+        android:layout_alignParentBottom="true"
+        android:layout_marginRight="20dp"
+        android:layout_marginBottom="50dp"
+
+        />
+
+
+</RelativeLayout>
