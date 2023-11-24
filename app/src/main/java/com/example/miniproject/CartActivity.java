@@ -1,5 +1,7 @@
 package com.example.miniproject;
 
+import androidx.annotation.NonNull;
+import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
@@ -9,6 +11,11 @@ import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.TextView;
+
+import java.util.Collection;
+import java.util.Iterator;
+import java.util.List;
+import java.util.ListIterator;
 
 public class CartActivity extends AppCompatActivity {
 
@@ -23,6 +30,7 @@ public class CartActivity extends AppCompatActivity {
         int testnum = 2;
         int testprice = 2000;
         int money = 10000;
+
         /* 테스트 데이터 끝 */
         btn_logout.setOnClickListener(v -> {
             Intent intent = new Intent(this,MainActivity.class); //첫화면으로 수정해야함
@@ -43,12 +51,14 @@ public class CartActivity extends AppCompatActivity {
             testlayout.setVisibility(View.GONE);
         } */
         /*총액 구하기*/
-        TextView testtv = findViewById(R.id.testtotal);
-        testtv.setText(""+testnum * testprice);
+        /*TextView testtv = findViewById(R.id.testtotal);*/
+  /*      testtv.setText(""+testnum * testprice);
         btn_payment.setOnClickListener(v -> {
             Intent intent = new Intent(this, PaymentActivity.class);
             startActivity(intent);
-        });
+        });*/
+
+
 
 
 
