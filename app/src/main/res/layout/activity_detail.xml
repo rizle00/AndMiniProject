@@ -10,7 +10,7 @@
         >
         <TextView
             style="@style/top_banner_text"
-            android:text="주문하기"/>
+            android:text="Menu"/>
         <Button
             android:id="@+id/btn_logout"
             style="@style/btn_logout"
@@ -84,7 +84,7 @@
         android:layout_marginRight="30dp"
         android:layout_marginTop="30dp">
         <Button
-            android:id="@+id/btn_order"
+            android:id="@+id/btn_purchase"
             android:layout_marginRight="20dp"
             android:layout_width="0dp"
             android:layout_weight="1"
