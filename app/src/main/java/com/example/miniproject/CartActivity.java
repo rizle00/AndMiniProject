@@ -13,6 +13,9 @@ import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.TextView;
 
+import com.example.teamproject.MainActivity;
+import com.example.teamproject.R;
+
 import org.w3c.dom.Text;
 
 import java.util.ArrayList;
@@ -33,7 +36,7 @@ public class CartActivity extends AppCompatActivity {
         Button btn_payment = findViewById(R.id.payment);
 
         btn_logout.setOnClickListener(v -> {
-            Intent intent = new Intent(this,MainActivity.class); //첫화면으로 수정해야함
+            Intent intent = new Intent(this, MainActivity.class); //첫화면으로 수정해야함
             startActivity(intent);
         });
 

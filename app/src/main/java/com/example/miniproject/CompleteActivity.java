@@ -1,4 +1,4 @@
-package com.example.teamproject;
+package com.example.miniproject;
 
 import androidx.appcompat.app.AppCompatActivity;
 
@@ -9,6 +9,8 @@ import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
 import android.widget.Button;
+
+
 
 public class CompleteActivity extends AppCompatActivity implements View.OnClickListener{
 private final String TAG="C";

@@ -1,4 +1,4 @@
-package com.example.teamproject;
+package com.example.miniproject;
 
 import androidx.appcompat.app.AppCompatActivity;
 
@@ -9,6 +9,8 @@ import android.util.Log;
 import android.view.View;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
+
+
 
 public class FrontActivity extends AppCompatActivity implements View.OnClickListener{
     private final String TAG="B";

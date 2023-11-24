@@ -1,4 +1,4 @@
-package com.example.teamproject;
+package com.example.miniproject;
 
 import androidx.appcompat.app.AppCompatActivity;
 
@@ -12,6 +12,7 @@ import android.widget.ImageView;
 import android.widget.TextView;
 
 import com.bumptech.glide.Glide;
+
 
 public class LogoActivity extends AppCompatActivity implements View.OnClickListener{
 

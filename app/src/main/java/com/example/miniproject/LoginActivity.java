@@ -11,6 +11,8 @@ import android.widget.EditText;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import com.example.teamproject.R;
+
 public class LoginActivity extends AppCompatActivity {
 
     TextView textId;
