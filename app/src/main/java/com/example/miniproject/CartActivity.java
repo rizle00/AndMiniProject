@@ -89,11 +89,6 @@ public class CartActivity extends AppCompatActivity {
             Intent intent = new Intent(this , PaymentActivity.class);
             startActivity(intent);
         });
-        int finalTotalprice = totalprice;
-        btn_payment.setOnClickListener(v -> {
-            Intent intent = new Intent(this , PaymentActivity.class);
-            dto.setPrice() = finalTotalprice;
-            startActivity(intent);
-        });
+
     }
 }

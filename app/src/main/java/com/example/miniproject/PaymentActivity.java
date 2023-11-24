@@ -9,6 +9,7 @@ import android.widget.EditText;
 import android.widget.ImageView;
 import android.widget.TextView;
 
+
 public class PaymentActivity extends AppCompatActivity {
 
     @Override
@@ -16,7 +17,6 @@ public class PaymentActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_payment);
         ImageView imgv_close = findViewById(R.id.imgv_close);
-        Button btn_logout = findViewById(R.id.btn_logout);
         EditText edt_address = findViewById(R.id.edt_address);
         TextView tv_price = findViewById(R.id.tv_price);
         TextView tv_money = findViewById(R.id.tv_money);
@@ -38,7 +38,6 @@ public class PaymentActivity extends AppCompatActivity {
         edt_address.setText(address); //dto.getaddress
         tv_price.setText(pdto.getPrice());
         tv_money.setText(""+money);
-        tv_change.setText(""+(money-(price*count)));
         btn_pay.setOnClickListener(v -> {
             Intent intent = new Intent(this,CartActivity.class);
             startActivity(intent);
