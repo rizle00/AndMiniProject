@@ -10,6 +10,8 @@ import android.widget.EditText;
 import android.widget.ImageView;
 import android.widget.TextView;
 
+import com.example.teamproject.R;
+
 import java.util.List;
 
 public class DetailActivity extends AppCompatActivity implements View.OnClickListener {

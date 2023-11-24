@@ -1,12 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
-    xmlns:tools="http://schemas.android.com/tools"
-    android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    tools:context=".ProductActivity">
 
-</androidx.constraintlayout.widget.ConstraintLayout>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
@@ -17,7 +10,7 @@
 
         <TextView
             style="@style/top_banner_text"
-            android:text="분식 배달 홈" />
+            android:text="분식 특공대" />
 
         <Button
             android:id="@+id/btn_logout"
@@ -37,7 +30,7 @@
             <ImageView
                 android:id="@+id/imgv_gim"
                 style="@style/name_imgv"
-                android:src="@drawable/ic_launcher_foreground" />
+                android:src="@drawable/gy" />
 
             <TextView
                 android:id="@+id/tv_gim"
@@ -51,7 +44,7 @@
             <ImageView
                 android:id="@+id/imgv_ramen"
                 style="@style/name_imgv"
-                android:src="@drawable/ic_launcher_foreground" />
+                android:src="@drawable/rg" />
 
             <TextView
                 android:id="@+id/tv_ramen"
@@ -65,7 +58,7 @@
             <ImageView
                 android:id="@+id/imgv_noodle"
                 style="@style/name_imgv"
-                android:src="@drawable/ic_launcher_foreground" />
+                android:src="@drawable/nwoo"/>
 
             <TextView
                 android:id="@+id/tv_noodle"
@@ -83,7 +76,7 @@
             <ImageView
                 android:id="@+id/imgv_rice"
                 style="@style/name_imgv"
-                android:src="@drawable/ic_launcher_foreground" />
+                android:src="@drawable/rg" />
 
             <TextView
                 android:id="@+id/tv_rice"
@@ -97,7 +90,7 @@
             <ImageView
                 android:id="@+id/imgv_tteok"
                 style="@style/name_imgv"
-                android:src="@drawable/ic_launcher_foreground" />
+                android:src="@drawable/tg" />
 
             <TextView
                 android:id="@+id/tv_tteok"
@@ -111,7 +104,7 @@
             <ImageView
                 android:id="@+id/imgv_fry"
                 style="@style/name_imgv"
-                android:src="@drawable/ic_launcher_foreground" />
+                android:src="@drawable/fm" />
 
             <TextView
                 android:id="@+id/tv_fry"
@@ -133,7 +126,7 @@
             <ImageView
                 android:id="@+id/imgv_coffee"
                 style="@style/name_imgv"
-                android:src="@drawable/ic_launcher_foreground" />
+                android:src="@drawable/coffee_americano" />
 
             <TextView
                 android:id="@+id/tv_coffee"
@@ -147,7 +140,7 @@
             <ImageView
                 android:id="@+id/imgv_ade"
                 style="@style/name_imgv"
-                android:src="@drawable/ic_launcher_foreground" />
+                android:src="@drawable/ade_grape_fruit" />
 
             <TextView
                 android:id="@+id/tv_ade"
@@ -161,7 +154,7 @@
             <ImageView
                 android:id="@+id/imgv_cola"
                 style="@style/name_imgv"
-                android:src="@drawable/ic_launcher_foreground" />
+                android:src="@drawable/can_coke" />
 
             <TextView
                 android:id="@+id/tv_cola"
