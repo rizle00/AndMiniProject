@@ -1,12 +1,14 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout
+<RelativeLayout
     xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     tools:context=".DetailActivity"
-    style="@style/main_linear">
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
     <RelativeLayout
         style="@style/top_banner_rel"
+        android:id="@+id/detail_rel"
         >
         <TextView
             style="@style/top_banner_text"
@@ -17,72 +19,93 @@
             android:background="@drawable/logout"
             app:backgroundTint="@null"/>
     </RelativeLayout>
-    <LinearLayout
-        style="@style/menu_linear">
-        <ImageView
-            style="@style/datail_imgv"
-            android:id="@+id/imgv_detail1"
-            android:src="@drawable/ic_launcher_foreground"/>
-        <TextView
-            style="@style/detail_tv"
-            android:id="@+id/tv_detail1"
-            android:text="멸치김밥\n 멸치가 들어간김밥입니다"/>
-        <EditText
-            style="@style/detail_etd"
-            android:id="@+id/edt_text1"/>
+    <ScrollView
+        android:layout_below="@+id/detail_rel"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+        <LinearLayout
+            style="@style/main_linear"
+          >
 
-    </LinearLayout>
-    <LinearLayout
-        style="@style/menu_linear">
-        <ImageView
-            style="@style/datail_imgv"
-            android:id="@+id/imgv_detail2"
-            android:src="@drawable/ic_launcher_foreground"/>
-        <TextView
-            style="@style/detail_tv"
-            android:id="@+id/tv_detail2"
-            android:text="멸치김밥\n 멸치가 들어간김밥입니다"/>
-        <EditText
-            style="@style/detail_etd"
-            android:id="@+id/edt_text2"/>
+            <LinearLayout
+                style="@style/detail_linear">
+                <ImageView
+                    style="@style/datail_imgv"
+                    android:id="@+id/imgv_detail1"
+                    android:src="@drawable/ic_launcher_foreground"/>
+                <TextView
+                    style="@style/detail_tv"
+                    android:id="@+id/tv_detail1"
+                    android:text="멸치김밥\n 멸치가 들어간김밥입니다"/>
+                <EditText
+                    style="@style/detail_etd"
+                    android:id="@+id/edt_text1"/>
 
-    </LinearLayout>
-    <LinearLayout
-        style="@style/menu_linear">
-        <ImageView
-            style="@style/datail_imgv"
-            android:id="@+id/imgv_detail3"
-            android:src="@drawable/ic_launcher_foreground"/>
-        <TextView
-            style="@style/detail_tv"
-            android:id="@+id/tv_detail3"
-            android:text="멸치김밥\n 멸치가 들어간김밥입니다"/>
-        <EditText
-            style="@style/detail_etd"
-            android:id="@+id/edt_text3"/>
+            </LinearLayout>
+            <LinearLayout
+                style="@style/detail_linear">
+                <ImageView
+                    style="@style/datail_imgv"
+                    android:id="@+id/imgv_detail2"
+                    android:src="@drawable/ic_launcher_foreground"/>
+                <TextView
+                    style="@style/detail_tv"
+                    android:id="@+id/tv_detail2"
+                    android:text="멸치김밥\n 멸치가 들어간김밥입니다"/>
+                <EditText
+                    style="@style/detail_etd"
+                    android:id="@+id/edt_text2"/>
 
-    </LinearLayout>
-    <LinearLayout
-        style="@style/menu_linear">
-        <ImageView
-            style="@style/datail_imgv"
-            android:id="@+id/imgv_detail4"
-            android:src="@drawable/ic_launcher_foreground"/>
-        <TextView
-            style="@style/detail_tv"
-            android:id="@+id/tv_detail4"
-            android:text="멸치김밥\n 멸치가 들어간김밥입니다"/>
-        <EditText
-            style="@style/detail_etd"
-            android:id="@+id/edt_text4"/>
+            </LinearLayout>
+            <LinearLayout
+                style="@style/detail_linear">
+                <ImageView
+                    style="@style/datail_imgv"
+                    android:id="@+id/imgv_detail3"
+                    android:src="@drawable/ic_launcher_foreground"/>
+                <TextView
+                    style="@style/detail_tv"
+                    android:id="@+id/tv_detail3"
+                    android:text="멸치김밥\n 멸치가 들어간김밥입니다"/>
+                <EditText
+                    style="@style/detail_etd"
+                    android:id="@+id/edt_text3"/>
 
-    </LinearLayout>
+            </LinearLayout>
+            <LinearLayout
+                style="@style/detail_linear">
+                <ImageView
+                    style="@style/datail_imgv"
+                    android:id="@+id/imgv_detail4"
+                    android:src="@drawable/ic_launcher_foreground"/>
+                <TextView
+                    style="@style/detail_tv"
+                    android:id="@+id/tv_detail4"
+                    android:text="멸치김밥\n 멸치가 들어간김밥입니다"/>
+                <EditText
+                    style="@style/detail_etd"
+                    android:id="@+id/edt_text4"/>
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="200dp">
+
+
+            </LinearLayout>
+
+
+        </LinearLayout>
+    </ScrollView>
+
     <LinearLayout
-        style="@style/menu_linear"
+        android:layout_alignParentBottom="true"
+        style="@style/detail_linear"
         android:paddingLeft="40dp"
         android:paddingRight="40dp"
         android:layout_marginRight="30dp"
-        android:layout_marginTop="30dp">
+        android:layout_marginBottom="50dp">
         <Button
             android:id="@+id/btn_purchase"
             android:layout_marginRight="20dp"
@@ -102,5 +125,4 @@
             android:text="뒤로가기"/>
     </LinearLayout>
 
-
-</LinearLayout>
+</RelativeLayout>

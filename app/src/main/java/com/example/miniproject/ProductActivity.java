@@ -35,7 +35,7 @@ public class ProductActivity extends AppCompatActivity implements View.OnClickLi
         btn_cart = findViewById(R.id.btn_cart);
         imgv_gim = findViewById(R.id.imgv_gim);
         imgv_ramen = findViewById(R.id.imgv_ramen);
-        imgv_noodle = findViewById(R.id.imgv_ramen);
+        imgv_noodle = findViewById(R.id.imgv_noodle);
         imgv_rice = findViewById(R.id.imgv_rice);
         imgv_tteok = findViewById(R.id.imgv_tteok);
         imgv_fry = findViewById(R.id.imgv_fry);
@@ -84,7 +84,7 @@ public class ProductActivity extends AppCompatActivity implements View.OnClickLi
             startActivity(intent);
 
         }else if(v.getId() == R.id.btn_logout){
-            Intent intent = new Intent(this, MainActivity.class );
+            Intent intent = new Intent(this, FrontActivity.class );
             startActivity(intent);
 
         } else if(v.getId() == R.id.imgv_gim || v.getId() == R.id.tv_gim){
@@ -94,7 +94,7 @@ public class ProductActivity extends AppCompatActivity implements View.OnClickLi
             setName("ramen");
 
         } else if(v.getId() == R.id.imgv_noodle || v.getId() == R.id.tv_noodle){
-
+            setName("noodle");
 
         } else if(v.getId() == R.id.imgv_rice || v.getId() == R.id.tv_rice){
             setName("rice");

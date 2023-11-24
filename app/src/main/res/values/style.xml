@@ -36,6 +36,15 @@
         <item name="android:layout_marginTop">20dp</item>
     </style>
     <style name="menu_linear">
+        <item name="android:layout_marginTop">20dp</item>
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:layout_marginLeft">30dp</item>
+        <item name="android:orientation">horizontal</item>
+    </style>
+    <style name="detail_linear">
+        <item name="android:layout_marginTop">50dp</item>
+        <item name="android:paddingTop">20dp</item>
         <item name="android:layout_width">match_parent</item>
         <item name="android:layout_height">wrap_content</item>
         <item name="android:layout_marginLeft">30dp</item>
@@ -64,11 +73,10 @@
     <style name="datail_imgv">
         <item name="android:layout_marginLeft">20dp</item>
         <item name="android:layout_marginTop">20dp</item>
-        <item name="android:layout_width">wrap_content</item>
-        <item name="android:layout_height">wrap_content</item>
+        <item name="android:layout_width">110dp</item>
+        <item name="android:layout_height">110dp</item>
     </style>
     <style name="detail_tv">
-        <item name="android:layout_marginTop">45dp</item>
         <item name="android:layout_width">0dp</item>
         <item name="android:layout_weight">1</item>
         <item name="android:layout_height">wrap_content</item>

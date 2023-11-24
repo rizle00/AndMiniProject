@@ -109,7 +109,7 @@ public class DetailActivity extends AppCompatActivity implements View.OnClickLis
                 ivs[i].setImageResource(colasI[i]);
 
             }
-            tvs[i].setText(list.get(i).getName()+"\n"+list.get(i).getInfo()+"가격 : "+list.get(i).getPrice());
+            tvs[i].setText(list.get(i).getName()+"\n"+list.get(i).getInfo()+"\n"+"가격 : "+list.get(i).getPrice());
         }
 
     }
