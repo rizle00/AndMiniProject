@@ -16,7 +16,6 @@ public class ProductDTO {
     }
 
     public ProductDTO() {
-
     }
 
     public int getChoice() {

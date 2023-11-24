@@ -2,6 +2,7 @@ package com.example.miniproject;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.app.Activity;
 import android.app.SearchManager;
 import android.content.Intent;
 import android.net.Uri;
@@ -84,24 +85,34 @@ public class ProductActivity extends AppCompatActivity implements View.OnClickLi
         }else if(v.getId() == R.id.btn_logout){
             Intent intent = new Intent(this, MainActivity.class );
             startActivity(intent);
+
         } else if(v.getId() == R.id.imgv_gim || v.getId() == R.id.tv_gim){
             setName("gim");
+
         } else if(v.getId() == R.id.imgv_ramen || v.getId() == R.id.tv_ramen){
             setName("ramen");
+
         } else if(v.getId() == R.id.imgv_noodle || v.getId() == R.id.tv_noodle){
-            setName("noodle");
+
+
         } else if(v.getId() == R.id.imgv_rice || v.getId() == R.id.tv_rice){
             setName("rice");
+
         } else if(v.getId() == R.id.imgv_tteok || v.getId() == R.id.tv_tteok){
             setName("tteok");
+
         } else if(v.getId() == R.id.imgv_fry || v.getId() == R.id.tv_fry){
             setName("fry");
+
         } else if(v.getId() == R.id.imgv_coffee || v.getId() == R.id.tv_coffee){
             setName("coffee");
+
         } else if(v.getId() == R.id.imgv_ade || v.getId() == R.id.tv_ade){
             setName("ade");
+
         } else if(v.getId() == R.id.imgv_cola || v.getId() == R.id.tv_cola){
             setName("cola");
+
         }
     }
 
