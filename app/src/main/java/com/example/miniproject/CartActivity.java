@@ -16,6 +16,7 @@ import android.widget.TextView;
 
 import org.w3c.dom.Text;
 
+import java.io.Serializable;
 import java.util.ArrayList;
 import java.util.Collection;
 import java.util.Iterator;
@@ -23,7 +24,7 @@ import java.util.List;
 import java.util.ListIterator;
 
 public class CartActivity extends AppCompatActivity {
-
+    int totalprice = 0;
     @SuppressLint("SetTextI18n")
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -66,7 +67,7 @@ public class CartActivity extends AppCompatActivity {
         TextView tv_name = findViewById(R.id.name);
         TextView tv_amount = findViewById(R.id.amount);
         TextView tv_price = findViewById(R.id.price);
-        int totalprice = 0;
+
         String name = "";
         for(int i = 0 ; i < list.size() ; i++) {
             name = name + list.get(i).getName() +"\n\r";
@@ -86,8 +87,12 @@ public class CartActivity extends AppCompatActivity {
 
         TextView tv_totalprice = findViewById(R.id.totalprice);
         tv_totalprice.setText("총액 : " + totalprice + "원");
+
+
         btn_payment.setOnClickListener(v -> {
-            Intent intent = new Intent(this , PaymentActivity.class);
+            Intent intent = new Intent(this, PaymentActivity.class);
+            int a = totalprice;
+            intent.putExtra("str",totalprice);
             startActivity(intent);
         });
 

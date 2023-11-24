@@ -24,6 +24,7 @@ public class PaymentActivity extends AppCompatActivity {
         Button btn_pay = findViewById(R.id.btn_pay);
         MemberDTO dto = new MemberDTO();
         ProductDTO pdto = new ProductDTO();
+
         /* 테스트 데이터*/
         int money = 1000000;
         int price ;
@@ -35,8 +36,10 @@ public class PaymentActivity extends AppCompatActivity {
             Intent intent = new Intent(this, CartActivity.class);
             startActivity(intent);
         });
+        Intent getintent = getIntent();
+        tv_price.setText(getintent.getStringExtra("str"));
         edt_address.setText(address); //dto.getaddress
-        tv_price.setText(pdto.getPrice());
+
         tv_money.setText(""+money);
         btn_pay.setOnClickListener(v -> {
             Intent intent = new Intent(this,CartActivity.class);
