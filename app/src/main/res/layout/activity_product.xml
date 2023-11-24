@@ -119,7 +119,7 @@
         style="@style/name_text"
         android:text="음료" />
 
-    <LinearLayout style="@style/menu_linear"123>
+    <LinearLayout style="@style/menu_linear">
 
         <RelativeLayout style="@style/menu_rel">
 
