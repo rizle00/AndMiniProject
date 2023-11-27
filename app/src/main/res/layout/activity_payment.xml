@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
@@ -7,14 +7,11 @@
     tools:context=".PaymentActivity"
     android:orientation="vertical">
 
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:orientation="vertical">
     <RelativeLayout
+        android:id="@+id/nav_bar"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:background="@color/purple_200">
+        >
 
         <ImageView
             android:id="@+id/imgv_close"
@@ -25,7 +22,19 @@
             style="@style/nav_text"
             android:text="주문하기"/>
 
+
     </RelativeLayout>
+
+    <LinearLayout
+        android:layout_below="@+id/nav_bar"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+        <View
+            android:layout_below="@+id/nav_bar"
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:background="#939393"/>
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
@@ -37,7 +46,11 @@
             android:text="테스트용 주소"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"/>
-
+        <View
+            android:layout_below="@+id/nav_bar"
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:background="#939393"/>
         <TextView
             android:text="주문금액"
             android:layout_width="wrap_content"
@@ -46,15 +59,26 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:id="@+id/tv_price"/>
+        <View
+            android:layout_below="@+id/nav_bar"
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:background="#939393"/>
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="현재잔액"/>
+
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:id="@+id/tv_money"
             />
+        <View
+            android:layout_below="@+id/nav_bar"
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:background="#939393"/>
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
@@ -65,12 +89,13 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:id="@+id/tv_change"/>
+    </LinearLayout>
         <Button
-            android:layout_width="wrap_content"
+            android:layout_alignParentBottom="true"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:text="구매하기"
             android:id="@+id/btn_pay"/>
 
 
-    </LinearLayout>
-</ScrollView>
+</RelativeLayout>

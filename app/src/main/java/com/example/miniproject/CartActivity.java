@@ -36,6 +36,7 @@ public class CartActivity extends AppCompatActivity {
         TextView tv_name = findViewById(R.id.cartName);
         TextView tv_amount = findViewById(R.id.cartAmount);
         TextView tv_price = findViewById(R.id.cartPrice);
+        TextView tv_totalprice = findViewById(R.id.totalprice);
 
         btn_logout.setOnClickListener(v -> {
             Intent intent = new Intent(this, LoginActivity.class); //첫화면으로 수정해야함
@@ -47,32 +48,24 @@ public class CartActivity extends AppCompatActivity {
             startActivity(intent);
         });
 
-        for()
-        getIntent()
-        String name = "";
-        for(int i = 0 ; i < list.size() ; i++) {
-            name = name + list.get(i).getName() +"\n\r";
-            totalprice = totalprice + list.get(i).getPrice()*list.get(i).getQuantity();
+
+
+        String name = "" , price = "", amount = "";
+
+        for(int i = 0 ; i < 4 ; i++) {
+            name = name + getIntent().getStringExtra("name"+(i+1)) +"\n\r";
+
+            amount = amount + Integer.parseInt(getIntent().getStringExtra("quan"+(i+1))) + "개" + "\n\r";
+            price = price + Integer.parseInt(getIntent().getStringExtra("price"+(i+1))) + "원 " +"\n\r";
+            totalprice = totalprice + Integer.parseInt(getIntent().getStringExtra("quan"+(i+1)))*Integer.parseInt(getIntent().getStringExtra("quan"+(i+1)));
         };
         tv_name.setText(name);
-        String price = "";
-        for(int i = 0 ; i < list.size() ; i++) {
-            price = price +   list.get(i).getPrice() + "원 " +"\n\r";
-        };
         tv_price.setText(price);
-        String amouont = "";
-        for(int i = 0 ; i < list.size() ; i++) {
-            amouont = amouont + list.get(i).getQuantity() + "개 " +"\n\r";
-        };
-        tv_amount.setText(amouont);
-
-        TextView tv_totalprice = findViewById(R.id.totalprice);
+        tv_amount.setText(amount);
         tv_totalprice.setText("총액 : " + totalprice + "원");
-
 
         btn_payment.setOnClickListener(v -> {
             Intent intent = new Intent(this, PaymentActivity.class);
-            int a = totalprice;
             intent.putExtra("str",totalprice);
             startActivity(intent);
         });
