@@ -2,26 +2,32 @@ package com.example.miniproject;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.app.Activity;
 import android.content.Intent;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ImageView;
 import android.widget.TextView;
+import android.widget.Toast;
 
 
+import java.util.ArrayList;
 import java.util.List;
 
 public class DetailActivity extends AppCompatActivity implements View.OnClickListener {
 
     DAO dao = new DAO();
-    ProductDTO dto = new ProductDTO();
     Button btn_logout, btn_purchase, btn_back;
     ImageView [] ivs = new ImageView[4];
     TextView [] tvs = new TextView[4];
     EditText [] edts = new EditText[4];
     List<ProductDTO> list;
+    MemberDTO mDto = new MemberDTO();
+    ArrayList<ProductDTO> cart = new ArrayList<>();
+
 
     int[] gimsI = {R.drawable.gy, R.drawable.gt, R.drawable.gn, R.drawable.gm};
     int[] ramensI = {R.drawable.rg, R.drawable.rt, R.drawable.rc, R.drawable.rs };
@@ -70,6 +76,7 @@ public class DetailActivity extends AppCompatActivity implements View.OnClickLis
 
 
     public void setChoice(String select){
+        dao.pref = getSharedPreferences("choice", Activity.MODE_PRIVATE);
 
         for (int i = 0; i<4; i++){
             if(select.equals("gim")){
@@ -109,28 +116,61 @@ public class DetailActivity extends AppCompatActivity implements View.OnClickLis
                 ivs[i].setImageResource(colasI[i]);
 
             }
+            if(dao.pref.contains(list.get(i).getName())){
+                list.get(i).setQuantity(list.get(i).getQuantity()-dao.pref.getInt(list.get(i).getName(),0));
+            }
+            Log.d("성공?", list.get(i).getQuantity()+"");
+
             tvs[i].setText(list.get(i).getName()+"\n"+list.get(i).getInfo()+"\n"+"가격 : "+list.get(i).getPrice());
         }
 
     }
 
+    public void saveChoice(String name, int i){
+        dao.pref = getSharedPreferences("choice", Activity.MODE_PRIVATE);
+        dao.edit = dao.pref.edit();
+        if(edts[i].getText().length()!=0){
+        dao.edit.putInt(name, Integer.parseInt(edts[i].getText().toString()));
+        }else {
+            dao.edit.putInt(name, 0);
+        }
+        dao.edit.commit();
+    }
+
+    public ArrayList<ProductDTO> makeCart() {
+        int choice;
+        for (int i = 0; i < 4; i++) {
+            if (edts[i].getTextSize() > 0) {
+                choice = Integer.parseInt(edts[i].getText().toString());
+                if (list.get(i).getQuantity() >= choice) {
+                    cart.add(new ProductDTO(list.get(i).getName(), list.get(i).getPrice(), choice));
+                    saveChoice(list.get(i).getName(), i);
+                } else {
+                    Toast.makeText(getApplicationContext(), "재고가 부족합니다", Toast.LENGTH_SHORT);
+                }
+            } else {
+                choice = 0;
+            }
+
+        }
+        return cart;
+    }
     @Override
     public void onClick(View v) {
+        Intent intent = null;
         if(v.getId() == R.id.btn_logout){
-            Intent intent = new Intent(this, MainActivity.class );
+            intent = new Intent(this, MainActivity.class );
             startActivity(intent);
         } else if(v.getId() == R.id.btn_back){
-            Intent intent = new Intent(this, ProductActivity.class );
+            intent = new Intent(this, ProductActivity.class );
             startActivity(intent);
         } else if(v.getId() == R.id.btn_purchase){
-            Intent intent = new Intent(this, CartActivity.class );
-            for(int i = 0; i<4; i++){
-                intent.putExtra("name"+(i+1),list.get(i).getName());
-                intent.putExtra("choice"+(i+1),edts[i].getText().toString());
-                intent.putExtra("quan"+(i+1), list.get(i).getQuantity());
-                intent.putExtra("price"+(i+1), list.get(i).getPrice());
-            }
-            startActivity(intent);
+            intent = new Intent(this, CartActivity.class );
+            mDto.setCart(makeCart());
+            intent.putExtra("cart",mDto.getCart());
         }
+        startActivity(intent);
     }
+}
+
 }
