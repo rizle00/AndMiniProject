@@ -8,6 +8,12 @@ public class ProductDTO {
     private int quantity;
     private int choice;
 
+    public ProductDTO(String name, int price, int choice) {
+        this.name = name;
+        this.price = price;
+        this.choice = choice;
+    }
+
     public ProductDTO(String name, String info, int price, int quantity) {
         this.name = name;
         this.info = info;

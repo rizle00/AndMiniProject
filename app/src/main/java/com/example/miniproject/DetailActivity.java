@@ -11,8 +11,10 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ImageView;
 import android.widget.TextView;
+import android.widget.Toast;
 
 
+import java.util.ArrayList;
 import java.util.List;
 
 public class DetailActivity extends AppCompatActivity implements View.OnClickListener {
@@ -23,6 +25,8 @@ public class DetailActivity extends AppCompatActivity implements View.OnClickLis
     TextView [] tvs = new TextView[4];
     EditText [] edts = new EditText[4];
     List<ProductDTO> list;
+    MemberDTO mDto = new MemberDTO();
+    ArrayList<ProductDTO> cart = new ArrayList<>();
 
 
     int[] gimsI = {R.drawable.gy, R.drawable.gt, R.drawable.gn, R.drawable.gm};
@@ -133,24 +137,40 @@ public class DetailActivity extends AppCompatActivity implements View.OnClickLis
         dao.edit.commit();
     }
 
+    public ArrayList<ProductDTO> makeCart() {
+        int choice;
+        for (int i = 0; i < 4; i++) {
+            if (edts[i].getTextSize() > 0) {
+                choice = Integer.parseInt(edts[i].getText().toString());
+                if (list.get(i).getQuantity() >= choice) {
+                    cart.add(new ProductDTO(list.get(i).getName(), list.get(i).getPrice(), choice));
+                    saveChoice(list.get(i).getName(), i);
+                } else {
+                    Toast.makeText(getApplicationContext(), "재고가 부족합니다", Toast.LENGTH_SHORT);
+                }
+            } else {
+                choice = 0;
+            }
+
+        }
+        return cart;
+    }
     @Override
     public void onClick(View v) {
+        Intent intent = null;
         if(v.getId() == R.id.btn_logout){
-            Intent intent = new Intent(this, MainActivity.class );
+            intent = new Intent(this, MainActivity.class );
             startActivity(intent);
         } else if(v.getId() == R.id.btn_back){
-            Intent intent = new Intent(this, ProductActivity.class );
+            intent = new Intent(this, ProductActivity.class );
             startActivity(intent);
         } else if(v.getId() == R.id.btn_purchase){
-            Intent intent = new Intent(this, CartActivity.class );
-            for(int i = 0; i<4; i++){
-                intent.putExtra("name"+(i+1),list.get(i).getName());
-                intent.putExtra("choice"+(i+1),edts[i].getText().toString());
-                saveChoice(list.get(i).getName(),i);
-                intent.putExtra("quan"+(i+1), list.get(i).getQuantity());
-                intent.putExtra("price"+(i+1), list.get(i).getPrice());
-            }
-            startActivity(intent);
+            intent = new Intent(this, CartActivity.class );
+            mDto.setCart(makeCart());
+            intent.putExtra("cart",mDto.getCart());
         }
+        startActivity(intent);
     }
+}
+
 }
