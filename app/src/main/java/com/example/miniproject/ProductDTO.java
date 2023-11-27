@@ -30,6 +30,7 @@ public class ProductDTO {
         this.choice = choice;
     }
 
+
     public int getChoice() {
         return choice;
     }

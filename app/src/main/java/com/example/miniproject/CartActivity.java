@@ -51,9 +51,10 @@ public class CartActivity extends AppCompatActivity {
         });
 
         mdto.setCart(new ArrayList<>());
-        ArrayList<ProductDTO> list = new ArrayList<>();
+        ArrayList<ProductDTO> list = (ArrayList<ProductDTO>) getIntent().getSerializableExtra("list")
 
-        for(int i = 0 ; i < 4 ; i++) {
+
+        for(int i = 0 ; i <  ; i++) {
             tv_name.setText(getIntent().getStringExtra("name"+(i+1)) +"\n\r");
             tv_amount.setText(Integer.parseInt(getIntent().getStringExtra("choice"+(i+1))) + "개");
             tv_price.setText(Integer.parseInt(getIntent().getStringExtra("price"+(i+1))) + "원 " +"\n\r");
