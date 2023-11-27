@@ -2,8 +2,10 @@ package com.example.miniproject;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.app.Activity;
 import android.content.Intent;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
@@ -16,12 +18,12 @@ import java.util.List;
 public class DetailActivity extends AppCompatActivity implements View.OnClickListener {
 
     DAO dao = new DAO();
-    ProductDTO dto = new ProductDTO();
     Button btn_logout, btn_purchase, btn_back;
     ImageView [] ivs = new ImageView[4];
     TextView [] tvs = new TextView[4];
     EditText [] edts = new EditText[4];
     List<ProductDTO> list;
+
 
     int[] gimsI = {R.drawable.gy, R.drawable.gt, R.drawable.gn, R.drawable.gm};
     int[] ramensI = {R.drawable.rg, R.drawable.rt, R.drawable.rc, R.drawable.rs };
@@ -70,6 +72,7 @@ public class DetailActivity extends AppCompatActivity implements View.OnClickLis
 
 
     public void setChoice(String select){
+        dao.pref = getSharedPreferences("choice", Activity.MODE_PRIVATE);
 
         for (int i = 0; i<4; i++){
             if(select.equals("gim")){
@@ -109,9 +112,25 @@ public class DetailActivity extends AppCompatActivity implements View.OnClickLis
                 ivs[i].setImageResource(colasI[i]);
 
             }
+            if(dao.pref.contains(list.get(i).getName())){
+                list.get(i).setQuantity(list.get(i).getQuantity()-dao.pref.getInt(list.get(i).getName(),0));
+            }
+            Log.d("성공?", list.get(i).getQuantity()+"");
+
             tvs[i].setText(list.get(i).getName()+"\n"+list.get(i).getInfo()+"\n"+"가격 : "+list.get(i).getPrice());
         }
 
+    }
+
+    public void saveChoice(String name, int i){
+        dao.pref = getSharedPreferences("choice", Activity.MODE_PRIVATE);
+        dao.edit = dao.pref.edit();
+        if(edts[i].getText().length()!=0){
+        dao.edit.putInt(name, Integer.parseInt(edts[i].getText().toString()));
+        }else {
+            dao.edit.putInt(name, 0);
+        }
+        dao.edit.commit();
     }
 
     @Override
@@ -127,6 +146,7 @@ public class DetailActivity extends AppCompatActivity implements View.OnClickLis
             for(int i = 0; i<4; i++){
                 intent.putExtra("name"+(i+1),list.get(i).getName());
                 intent.putExtra("choice"+(i+1),edts[i].getText().toString());
+                saveChoice(list.get(i).getName(),i);
                 intent.putExtra("quan"+(i+1), list.get(i).getQuantity());
                 intent.putExtra("price"+(i+1), list.get(i).getPrice());
             }
