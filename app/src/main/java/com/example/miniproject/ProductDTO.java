@@ -24,6 +24,12 @@ public class ProductDTO {
     public ProductDTO() {
     }
 
+    public ProductDTO(String name, int price, int choice) {
+        this.name = name;
+        this.price = price;
+        this.choice = choice;
+    }
+
     public int getChoice() {
         return choice;
     }
