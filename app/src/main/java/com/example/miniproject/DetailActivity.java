@@ -127,6 +127,8 @@ public class DetailActivity extends AppCompatActivity implements View.OnClickLis
             for(int i = 0; i<4; i++){
                 intent.putExtra("name"+(i+1),list.get(i).getName());
                 intent.putExtra("choice"+(i+1),edts[i].getText().toString());
+                intent.putExtra("quan"+(i+1), list.get(i).getQuantity());
+                intent.putExtra("price"+(i+1), list.get(i).getPrice());
             }
             startActivity(intent);
         }
