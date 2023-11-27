@@ -37,6 +37,8 @@ public class CartActivity extends AppCompatActivity {
         TextView tv_amount = findViewById(R.id.cartAmount);
         TextView tv_price = findViewById(R.id.cartPrice);
         TextView tv_totalprice = findViewById(R.id.totalprice);
+        MemberDTO mdto = new MemberDTO();
+        ProductDTO pdto = new ProductDTO();
 
         btn_logout.setOnClickListener(v -> {
             Intent intent = new Intent(this, LoginActivity.class); //첫화면으로 수정해야함
@@ -48,25 +50,21 @@ public class CartActivity extends AppCompatActivity {
             startActivity(intent);
         });
 
-
-
-        String name = "" , price = "", amount = "";
+        mdto.setCart(new ArrayList<>());
+        ArrayList<ProductDTO> list = new ArrayList<>();
 
         for(int i = 0 ; i < 4 ; i++) {
-            name = name + getIntent().getStringExtra("name"+(i+1)) +"\n\r";
-
-            amount = amount + Integer.parseInt(getIntent().getStringExtra("quan"+(i+1))) + "개" + "\n\r";
-            price = price + Integer.parseInt(getIntent().getStringExtra("price"+(i+1))) + "원 " +"\n\r";
+            tv_name.setText(getIntent().getStringExtra("name"+(i+1)) +"\n\r");
+            tv_amount.setText(Integer.parseInt(getIntent().getStringExtra("choice"+(i+1))) + "개");
+            tv_price.setText(Integer.parseInt(getIntent().getStringExtra("price"+(i+1))) + "원 " +"\n\r");
             totalprice = totalprice + Integer.parseInt(getIntent().getStringExtra("quan"+(i+1)))*Integer.parseInt(getIntent().getStringExtra("quan"+(i+1)));
+
         };
-        tv_name.setText(name);
-        tv_price.setText(price);
-        tv_amount.setText(amount);
         tv_totalprice.setText("총액 : " + totalprice + "원");
 
         btn_payment.setOnClickListener(v -> {
             Intent intent = new Intent(this, PaymentActivity.class);
-            intent.putExtra("str",totalprice);
+            intent.putExtra("total",totalprice);
             startActivity(intent);
         });
 
