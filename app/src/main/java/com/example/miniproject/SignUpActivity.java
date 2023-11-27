@@ -1,5 +1,7 @@
 package com.example.miniproject;
 
+import androidx.activity.result.ActivityResultLauncher;
+import androidx.activity.result.contract.ActivityResultContracts;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Context;
@@ -13,8 +15,7 @@ import android.widget.Toast;
 
 public class SignUpActivity extends AppCompatActivity {
 
-    TextView Signup,textSignname,textPwsign,textSignAddress;
-    EditText SignName, signPW , signaddress ;
+    EditText signId, signPW , signAddress ;
     Button btnSign;
 
     //내부 db?
@@ -27,25 +28,28 @@ public class SignUpActivity extends AppCompatActivity {
 
         sharedPreferences = getSharedPreferences("db", Context.MODE_PRIVATE);
 
-        Signup = findViewById(R.id.Signup);
-        textSignname = findViewById(R.id.textSignname);
-        textPwsign = findViewById(R.id.textPwsign);
-        textSignAddress = findViewById(R.id.textSignAddress);
-
-        SignName = findViewById(R.id.SignName);
+        signId = findViewById(R.id.signId);
         signPW = findViewById(R.id.signPW);
-        signaddress = findViewById(R.id.signaddress);
+        signAddress = findViewById(R.id.signAddress);
 
         btnSign = findViewById(R.id.btnSign);
 
-    btnSign.setOnClickListener(v -> {
+        // block touch
+        signAddress.setFocusable(false);
+        signAddress.setOnClickListener(v -> {
+            // 주소 검색 웹뷰 화면으로 이동
+            Intent intent = new Intent(this,SearchActivity.class);
+        });
 
-        String name = textSignname.getText().toString();
-        String pw = textPwsign.getText().toString();
-        String address = textSignAddress.getText().toString();
+        btnSign.setOnClickListener(v -> {
 
-        if (SignUp(name,pw,address)){
-            saveLoginStatus(true,name);
+        String id = signId.getText().toString();
+        String pw = signPW.getText().toString();
+        String address = signAddress.getText().toString();
+
+
+        if (SignUp(id,pw,address)){
+            saveLoginStatus(true,id);
             startActivity(new Intent(this,LoginActivity.class));
             finish();
         }else{
@@ -55,11 +59,20 @@ public class SignUpActivity extends AppCompatActivity {
     });
 
     }
+
+    private final ActivityResultLauncher<Intent> getSearchResult = registerForActivityResult(
+            new ActivityResultContracts.StartActivityForResult(),
+            result -> {
+                
+            }
+
+    )
     private boolean SignUp(String name,String pw, String address){
         if(!sharedPreferences.contains(name)){
-            SharedPreferences.Editor editor = sharedPreferences.edit();
-            editor.putString(name,pw);
-            editor.apply();
+            SharedPreferences.Editor editor = sharedPreferences.edit(); //데이터를 저장할 수 있는 메소드
+            editor.putString("loginId",name);
+            editor.putString("loginPw",pw);
+            editor.commit();
             return true;
         }
         return false;
@@ -69,6 +82,6 @@ public class SignUpActivity extends AppCompatActivity {
         SharedPreferences.Editor editor = sharedPreferences.edit();
         editor.putBoolean("login",login);
         editor.putString("username",name);
-        editor.apply();
+        editor.commit();
     }
 }
