@@ -46,20 +46,19 @@ public class CartActivity extends AppCompatActivity {
         });
 
         imgv_close.setOnClickListener(v -> {
-            Intent intent = new Intent(this,ProductActivity.class); //전 화면으로 수정해야함
-            startActivity(intent);
+            //전 화면으로 수정해야함
+            finish();
         });
         
         mdto.setCart(new ArrayList<>());
-        ArrayList<ProductDTO> list = (ArrayList<ProductDTO>) getIntent().getSerializableExtra("list")
+        ArrayList<ProductDTO> list = (ArrayList<ProductDTO>) getIntent().getSerializableExtra("cart");
 
 
-        for(int i = 0 ; i <  ; i++) {
-            tv_name.setText(getIntent().getStringExtra("name"+(i+1)) +"\n\r");
-            tv_amount.setText(Integer.parseInt(getIntent().getStringExtra("choice"+(i+1))) + "개");
-            tv_price.setText(Integer.parseInt(getIntent().getStringExtra("price"+(i+1))) + "원 " +"\n\r");
-            totalprice = totalprice + Integer.parseInt(getIntent().getStringExtra("quan"+(i+1)))*Integer.parseInt(getIntent().getStringExtra("quan"+(i+1)));
-
+        for(int i = 0 ; i < list.size() ; i++) {
+            tv_name.append(list.get(i).getName());
+            tv_amount.append(""+list.get(i).getChoice());
+            tv_price.append(""+list.get(i).getPrice());
+            totalprice = totalprice + (list.get(i).getChoice()*list.get(i).getPrice());
         };
         tv_totalprice.setText("총액 : " + totalprice + "원");
 

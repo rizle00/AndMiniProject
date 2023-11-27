@@ -24,25 +24,17 @@ public class PaymentActivity extends AppCompatActivity {
         Button btn_recharge = findViewById(R.id.btn_recharge);
         MemberDTO dto = new MemberDTO();
 
-
-        /* 테스트 데이터*/
-        int money = 1000000;
-        int price ;
-        int count = 2;
-        String address = "광주광역시 농성동";
-        /* 테스트 데이터 끝 */
-
         tv_price.setText(""+getIntent().getStringExtra("total"));
         tv_money.setText(""+dto.getMoney());
         tv_change.setText("" +(dto.getMoney() - getIntent().getIntExtra("total",-1)));
 
         btn_pay.setOnClickListener(v -> {
             Intent intent = new Intent(this,CartActivity.class);
+            dto.setMoney(dto.getMoney() - getIntent().getIntExtra("total",-1));
             startActivity(intent);
         });
         imgv_close.setOnClickListener(v -> {
             Intent intent = new Intent(this, CartActivity.class);
-            dto.setMoney(dto.getMoney() - getIntent().getIntExtra("total",-1));
             startActivity(intent);
         });
         btn_recharge.setOnClickListener(v -> {
