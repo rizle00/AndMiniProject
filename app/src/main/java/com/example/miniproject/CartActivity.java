@@ -49,7 +49,7 @@ public class CartActivity extends AppCompatActivity {
             Intent intent = new Intent(this,ProductActivity.class); //전 화면으로 수정해야함
             startActivity(intent);
         });
-
+        
         mdto.setCart(new ArrayList<>());
         ArrayList<ProductDTO> list = new ArrayList<>();
 
