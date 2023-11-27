@@ -146,7 +146,8 @@ public class DetailActivity extends AppCompatActivity implements View.OnClickLis
                     cart.add(new ProductDTO(list.get(i).getName(), list.get(i).getPrice(), choice));
                     saveChoice(list.get(i).getName(), i);
                 } else {
-                    Toast.makeText(getApplicationContext(), "재고가 부족합니다", Toast.LENGTH_SHORT);
+                    Toast.makeText(getApplicationContext(), list.get(i).getName()+"은/는 재고가 부족합니다\r\n"+
+                            list.get(i).getQuantity()+"개 있습니다", Toast.LENGTH_SHORT);
                 }
             } else {
                 choice = 0;
@@ -173,4 +174,3 @@ public class DetailActivity extends AppCompatActivity implements View.OnClickLis
     }
 }
 
-}
