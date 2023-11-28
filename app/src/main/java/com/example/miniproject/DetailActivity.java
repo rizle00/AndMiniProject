@@ -141,7 +141,7 @@ public class DetailActivity extends AppCompatActivity implements View.OnClickLis
         ArrayList<ProductDTO> cart = new ArrayList<>();
         int choice;
         for (int i = 0; i < 4; i++) {
-            if (edts[i].getTextSize() > 0) {
+            if (edts[i].getText().toString().length() > 0) {
                 choice = Integer.parseInt(edts[i].getText().toString());
                 if (list.get(i).getQuantity() >= choice) {
                     cart.add(new ProductDTO(list.get(i).getName(), list.get(i).getPrice(), choice));
