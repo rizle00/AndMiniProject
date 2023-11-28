@@ -155,14 +155,15 @@ public class DetailActivity extends AppCompatActivity implements View.OnClickLis
         Intent intent = null;
         if(v.getId() == R.id.btn_logout){
             intent = new Intent(this, MainActivity.class );
-            startActivity(intent);
+
         } else if(v.getId() == R.id.btn_back){
             intent = new Intent(this, ProductActivity.class );
-            startActivity(intent);
+
         } else if(v.getId() == R.id.btn_purchase){
             intent = new Intent(this, CartActivity.class );
             makeCart();
         }
+
         startActivity(intent);
     }
 }

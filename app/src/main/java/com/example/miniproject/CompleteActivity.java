@@ -37,7 +37,7 @@ private final String TAG="C";
             total +=  DAO.cart.get(i).getPrice()*DAO.cart.get(i).getChoice();
             saveChoice(DAO.cart.get(i).getName(), i);
         }
-            oderListMoneyWrite.setText(total);
+            oderListMoneyWrite.setText(""+total);
 
 
 
@@ -45,7 +45,7 @@ private final String TAG="C";
             @Override
             public void onClick(View v) {
 
-                Intent intent=new Intent(CompleteActivity.this, FrontActivity.class);
+                Intent intent=new Intent(CompleteActivity.this, ProductActivity.class);
                 startActivity(intent);
             }
         });
