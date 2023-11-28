@@ -25,6 +25,7 @@ import java.util.ListIterator;
 
 public class CartActivity extends AppCompatActivity {
     int totalprice = 0;
+
     @SuppressLint("SetTextI18n")
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -63,6 +64,7 @@ public class CartActivity extends AppCompatActivity {
         btn_payment.setOnClickListener(v -> {
             Intent intent = new Intent(this, PaymentActivity.class);
             intent.putExtra("total",totalprice);
+            intent.putExtra("list", list);
             startActivity(intent);
         });
 
