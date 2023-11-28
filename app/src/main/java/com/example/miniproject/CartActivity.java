@@ -38,15 +38,13 @@ public class CartActivity extends AppCompatActivity {
         TextView tv_price = findViewById(R.id.cartPrice);
         TextView tv_totalprice = findViewById(R.id.totalprice);
         MemberDTO mdto = new MemberDTO();
-        ProductDTO pdto = new ProductDTO();
 
         btn_logout.setOnClickListener(v -> {
-            Intent intent = new Intent(this, LoginActivity.class); //첫화면으로 수정해야함
+            Intent intent = new Intent(this, LoginActivity.class); //첫화면으로
             startActivity(intent);
         });
 
         imgv_close.setOnClickListener(v -> {
-            //전 화면으로 수정해야함
             finish();
         });
         

@@ -2,15 +2,13 @@
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
-    android:layout_width="match_parent"
-    android:layout_height="match_parent"
+    style="@style/main_linear"
     tools:context=".PaymentActivity"
     android:orientation="vertical">
 
     <RelativeLayout
         android:id="@+id/nav_bar"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
+        style="@style/top_banner_rel"
         >
 
         <ImageView
@@ -26,6 +24,8 @@
     </RelativeLayout>
 
     <LinearLayout
+        android:layout_marginLeft="70dp"
+        android:layout_marginTop="80dp"
         android:layout_below="@+id/nav_bar"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
