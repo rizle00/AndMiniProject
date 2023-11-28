@@ -13,6 +13,8 @@ import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.TextView;
 
+import java.util.ArrayList;
+
 public class ProductActivity extends AppCompatActivity implements View.OnClickListener{
 
     Button btn_logout, btn_cart;
@@ -26,6 +28,9 @@ public class ProductActivity extends AppCompatActivity implements View.OnClickLi
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_product);
+
+
+
         findId();
         setOnClick();
     }

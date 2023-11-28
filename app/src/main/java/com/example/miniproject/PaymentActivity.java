@@ -40,8 +40,6 @@ public class PaymentActivity extends AppCompatActivity {
                 Toast.makeText(this, "잔액이 부족합니다.", Toast.LENGTH_SHORT).show();
             }else{
             Intent intent = new Intent(this,CompleteActivity.class);
-            ArrayList<ProductDTO> list =  (ArrayList<ProductDTO>) getIntent().getSerializableExtra("list");
-            intent.putExtra("list",list);
             dto.setMoney(dto.getMoney() - getIntent().getIntExtra("total",-1));
             startActivity(intent);
             }
