@@ -39,6 +39,7 @@ public class SignUpActivity extends AppCompatActivity {
         signAddress.setOnClickListener(v -> {
             // 주소 검색 웹뷰 화면으로 이동
             Intent intent = new Intent(this,SearchActivity.class);
+            getSearchResult.launch(intent);
         });
 
         btnSign.setOnClickListener(v -> {
@@ -63,10 +64,16 @@ public class SignUpActivity extends AppCompatActivity {
     private final ActivityResultLauncher<Intent> getSearchResult = registerForActivityResult(
             new ActivityResultContracts.StartActivityForResult(),
             result -> {
-                
+                // Search Activity 로부터의 결과 값이 이곳을 전달된다
+                if(result.getResultCode() == RESULT_OK){
+                    if(result.getData() != null){
+                        String data = result.getData().getStringExtra("data");
+                        signAddress.setText(data);
+                    }
+                }
             }
 
-    )
+    );
     private boolean SignUp(String name,String pw, String address){
         if(!sharedPreferences.contains(name)){
             SharedPreferences.Editor editor = sharedPreferences.edit(); //데이터를 저장할 수 있는 메소드
