@@ -116,9 +116,12 @@ public class DetailActivity extends AppCompatActivity implements View.OnClickLis
                 ivs[i].setImageResource(colasI[i]);
 
             }
-            if(dao.pref.contains(list.get(i).getName())){
-                list.get(i).setQuantity(list.get(i).getQuantity()-dao.pref.getInt(list.get(i).getName(),0));
+            for (int j = 0; j<DAO.getCart().size(); j++){
+                if(list.get(i).getName().equals(DAO.)){
+                    list.get(i).setQuantity(list.get(i).getQuantity()-dao.pref.getInt(list.get(i).getName(),0));
+                }
             }
+
             Log.d("성공?", list.get(i).getQuantity()+"");
 
             tvs[i].setText(list.get(i).getName()+"\n"+list.get(i).getInfo()+"\n"+"가격 : "+list.get(i).getPrice());
