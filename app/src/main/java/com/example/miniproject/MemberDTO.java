@@ -6,20 +6,23 @@ public class MemberDTO {
 
 
     private String id, pw, address;
-    private int money;
-    private ArrayList<ProductDTO> cart;
+    static private int money;
 
-    public MemberDTO(String id, String pw, String address, int money, ArrayList<ProductDTO> cart) {
+    public MemberDTO(String id, String pw, String address) {
+        this.id = id;
+        this.pw = pw;
+        this.address = address;
+    }
+
+
+/*    public MemberDTO(String id, String pw, String address, int money) {
         this.id = id;
         this.pw = pw;
         this.address = address;
         this.money = money;
-        this.cart = cart;
-    }
+    }*/
 
-    public MemberDTO() {
 
-    }
 
     public String getId() {
         return id;
@@ -45,19 +48,13 @@ public class MemberDTO {
         this.address = address;
     }
 
-    public int getMoney() {
+    public static int getMoney() {
         return money;
     }
 
-    public void setMoney(int money) {
-        this.money = money;
+    public static void setMoney(int money) {
+        MemberDTO.money = money;
     }
 
-    public ArrayList<ProductDTO> getCart() {
-        return cart;
-    }
 
-    public void setCart(ArrayList<ProductDTO> cart) {
-        this.cart = cart;
-    }
 }
