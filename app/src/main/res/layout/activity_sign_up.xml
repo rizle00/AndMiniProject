@@ -46,7 +46,7 @@
                 />
 
             <EditText
-                android:id="@+id/SignName"
+                android:id="@+id/signId"
                 android:layout_width="match_parent"
                 android:layout_height="40dp"
                 android:layout_marginBottom="20dp"
@@ -89,7 +89,7 @@
                 android:textStyle="bold" />
 
             <EditText
-                android:id="@+id/signaddress"
+                android:id="@+id/signAddress"
                 android:layout_width="match_parent"
                 android:layout_height="40dp"
                 android:layout_marginBottom="20dp"
@@ -97,6 +97,10 @@
                 android:hint=" 주소를 입력해주세요"
                 android:inputType="textPersonName"
                 android:text="" />
+
+
+
+
 
             <Button
                 android:id="@+id/btnSign"
@@ -110,7 +114,10 @@
                 android:textSize="18dp"
                 android:textStyle="bold" />
 
+
         </LinearLayout>
+
+
 
 
     </LinearLayout>
