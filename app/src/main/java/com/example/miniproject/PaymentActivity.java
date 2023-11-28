@@ -35,6 +35,7 @@ public class PaymentActivity extends AppCompatActivity {
         tv_money.setText(""+MemberDTO.getMoney());
         tv_change.setText("" +(MemberDTO.getMoney() - getIntent().getIntExtra("total",-1)));
 
+
         btn_pay.setOnClickListener(v -> {
             if(MemberDTO.getMoney() < totalprice){
                 Toast.makeText(this, "잔액이 부족합니다.", Toast.LENGTH_SHORT).show();
@@ -53,5 +54,7 @@ public class PaymentActivity extends AppCompatActivity {
             Intent intent = new Intent(this , RechargeActivity.class);
             startActivity(intent);
         });
+
+
     }
 }

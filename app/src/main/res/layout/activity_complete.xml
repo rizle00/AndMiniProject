@@ -6,20 +6,16 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".CompleteActivity"
+
     >
     <ImageView
+        android:id="@+id/imgv_top"
         android:layout_width="match_parent"
-        android:layout_height="350dp"
+        android:layout_height="250dp"
         android:src="@drawable/ending"
         android:scaleType="fitXY"/>
 
-    <ImageView
-        android:id="@+id/imageViewChek"
-        android:layout_width="150dp"
-        android:layout_height="150dp"
-        android:layout_centerInParent="true"
-        android:paddingBottom="70dp"
-        app:srcCompat="@android:drawable/checkbox_on_background" />
+
 
     <TextView
         android:id="@+id/TextViewChek"
@@ -29,7 +25,7 @@
         android:textSize="30dp"
         android:gravity="center"
         android:textStyle="bold"
-        android:layout_alignBottom="@+id/imageViewChek"
+        android:layout_below="@+id/imgv_top"
 
         />
     <ImageView
@@ -41,31 +37,79 @@
         android:layout_centerHorizontal="true"
 
         />
-    <Button
-        android:id="@+id/TextViewList"
-        android:layout_width="180dp"
-        android:layout_height="70dp"
-        android:text="주문내역보기"
-        android:textSize="17dp"
-        android:gravity="center"
+
+    <TextView
+        android:id="@+id/oderListCheck"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="20dp"
+        android:background="#FBB9B9"
+        android:text="  고객님 주문리스트"
+        android:textSize="20dp"
         android:textStyle="bold"
-        android:layout_alignParentBottom="true"
-        android:layout_marginLeft="20dp"
-        android:layout_marginBottom="50dp"
+       android:layout_below="@+id/ok"
         />
+
+    <TextView
+        android:id="@+id/oderListName"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="  상품명(수량)"
+        android:textSize="20dp"
+        android:textStyle="bold"
+        android:layout_below="@+id/oderListCheck"
+        />
+
+    <TextView
+        android:id="@+id/oderListNameWrite"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="#ECF2F8"
+        android:text=" "
+        android:textSize="20dp"
+        android:textStyle="bold"
+        android:layout_below="@+id/oderListName"
+        />
+
+
+    <TextView
+        android:id="@+id/oderListMoney"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="30dp"
+        android:text="  결제금액"
+        android:textSize="20dp"
+        android:textStyle="bold"
+        android:layout_below="@+id/oderListNameWrite"
+        />
+
+    <TextView
+        android:id="@+id/oderListMoneyWrite"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="30dp"
+        android:background="#ECF2F8"
+        android:text=" "
+        android:textSize="20dp"
+        android:textStyle="bold"
+        android:layout_below="@+id/oderListMoney"
+        />
+
+
     <Button
         android:id="@+id/GoHome"
         android:layout_width="180dp"
-        android:layout_height="70dp"
-        android:text="홈으로가기"
-        android:textSize="17dp"
+        android:layout_height="60dp"
+        android:text="H O M E"
+        android:textSize="20dp"
         android:gravity="center"
         android:textStyle="bold"
-        android:layout_toRightOf="@+id/TextViewList"
+        android:layout_centerHorizontal="true"
         android:layout_alignParentBottom="true"
         android:layout_marginRight="20dp"
         android:layout_marginBottom="50dp"
-
+        android:textColor="#F1F2F3"
+android:background="#B341A1"
         />
 
 
