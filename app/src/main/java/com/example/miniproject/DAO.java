@@ -5,18 +5,12 @@ import android.content.SharedPreferences;
 import java.util.ArrayList;
 
 public class DAO {
-    private static ArrayList<ProductDTO> cart = new ArrayList<>();
+    public static ArrayList<ProductDTO> cart = new ArrayList<>();
     MemberDTO mDto ;
     ProductDTO pDto = new ProductDTO();
     ArrayList<MemberDTO> mList = new ArrayList<>();
 
-    public static ArrayList<ProductDTO> getCart() {
-        return cart;
-    }
 
-    public static void setCart(ArrayList<ProductDTO> cart) {
-        DAO.cart = cart;
-    }
 
     SharedPreferences pref;
     SharedPreferences.Editor edit;

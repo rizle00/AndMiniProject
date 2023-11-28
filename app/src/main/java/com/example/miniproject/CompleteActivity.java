@@ -32,10 +32,10 @@ private final String TAG="C";
 
 
             int total =0;
-        for (int i = 0; i<DAO.getCart().size(); i++){
-            oderListNameWrite.append(DAO.getCart().get(i).getName()+"("+DAO.getCart().get(i).getChoice()+")\n");
-            total +=  DAO.getCart().get(i).getPrice()*DAO.getCart().get(i).getChoice();
-            saveChoice(DAO.getCart().get(i).getName(), i);
+        for (int i = 0; i<DAO.cart.size(); i++){
+            oderListNameWrite.append(DAO.cart.get(i).getName()+"("+DAO.cart.get(i).getChoice()+")\n");
+            total +=  DAO.cart.get(i).getPrice()*DAO.cart.get(i).getChoice();
+            saveChoice(DAO.cart.get(i).getName(), i);
         }
             oderListMoneyWrite.setText(total);
 
@@ -58,7 +58,7 @@ private final String TAG="C";
         dao.pref = getSharedPreferences("choice", Activity.MODE_PRIVATE);
         dao.edit = dao.pref.edit();
 
-            dao.edit.putInt(name,DAO.getCart().get(i).getChoice());
+            dao.edit.putInt(name,DAO.cart.get(i).getChoice());
 
         dao.edit.commit();
     }

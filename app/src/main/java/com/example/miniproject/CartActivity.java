@@ -5,6 +5,7 @@ import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.annotation.SuppressLint;
+import android.app.Activity;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
@@ -46,6 +47,8 @@ public class CartActivity extends AppCompatActivity {
         });
 
         imgv_close.setOnClickListener(v -> {
+            Intent intent = new Intent(this, ProductActivity.class);
+            startActivity(intent);
             finish();
         });
 
@@ -54,11 +57,11 @@ public class CartActivity extends AppCompatActivity {
 //        ArrayList<ProductDTO> ad = (ArrayList<ProductDTO>) getIntent().getSerializableExtra("cart");
       /* ArrayList<ArrayList<ProductDTO>> listaaa = new ArrayList<>();
         listaaa.add(ad);*/
-        for(int i = 0 ; i < DAO.getCart().size() ; i++) {
-            tv_name.append(DAO.getCart().get(i).getName()+"\n\r");
-            tv_amount.append(""+DAO.getCart().get(i).getChoice()+"\n\r");
-            tv_price.append(""+DAO.getCart().get(i).getPrice()+"\n\r");
-            totalprice = totalprice + (DAO.getCart().get(i).getChoice()*DAO.getCart().get(i).getPrice());
+        for(int i = 0 ; i < DAO.cart.size() ; i++) {
+            tv_name.append(DAO.cart.get(i).getName()+"\n\r");
+            tv_amount.append(""+DAO.cart.get(i).getChoice()+"\n\r");
+            tv_price.append(""+DAO.cart.get(i).getPrice()+"\n\r");
+            totalprice = totalprice + (DAO.cart.get(i).getChoice()*DAO.cart.get(i).getPrice());
         };
         tv_totalprice.setText("총액 : " + totalprice + "원");
 

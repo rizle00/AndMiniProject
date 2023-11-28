@@ -25,7 +25,7 @@ public class DetailActivity extends AppCompatActivity implements View.OnClickLis
     TextView [] tvs = new TextView[4];
     EditText [] edts = new EditText[4];
     List<ProductDTO> list;
-    MemberDTO mDto ;
+
 
 
 
@@ -116,7 +116,7 @@ public class DetailActivity extends AppCompatActivity implements View.OnClickLis
                 ivs[i].setImageResource(colasI[i]);
 
             }
-            for (int j = 0; j<DAO.getCart().size(); j++){
+            for (int j = 0; j<DAO.cart.size(); j++){
                 if(dao.pref.contains(list.get(i).getName())){
                     list.get(i).setQuantity(list.get(i).getQuantity()-dao.pref.getInt(list.get(i).getName(),0));
                 }
@@ -131,14 +131,13 @@ public class DetailActivity extends AppCompatActivity implements View.OnClickLis
 
 
 
-    public ArrayList<ProductDTO> makeCart() {
-        ArrayList<ProductDTO> cart = new ArrayList<>();
+    public void makeCart() {
         int choice;
         for (int i = 0; i < 4; i++) {
             if (edts[i].getText().toString().length() > 0) {
                 choice = Integer.parseInt(edts[i].getText().toString());
                 if (list.get(i).getQuantity() >= choice) {
-                    cart.add(new ProductDTO(list.get(i).getName(), list.get(i).getPrice(), choice));
+                    DAO.cart.add(new ProductDTO(list.get(i).getName(), list.get(i).getPrice(), choice));
 
                 } else {
                     Toast.makeText(getApplicationContext(), list.get(i).getName()+"은/는 재고가 부족합니다\r\n"+
@@ -149,7 +148,7 @@ public class DetailActivity extends AppCompatActivity implements View.OnClickLis
             }
 
         }
-        return cart;
+
     }
     @Override
     public void onClick(View v) {
@@ -162,8 +161,7 @@ public class DetailActivity extends AppCompatActivity implements View.OnClickLis
             startActivity(intent);
         } else if(v.getId() == R.id.btn_purchase){
             intent = new Intent(this, CartActivity.class );
-            dao.setCart(makeCart());
-            intent.putExtra("cart",dao.getCart());
+            makeCart();
         }
         startActivity(intent);
     }

@@ -6,6 +6,7 @@ import androidx.appcompat.app.AppCompatActivity;
 import android.content.Intent;
 import android.content.SharedPreferences;
 import android.os.Bundle;
+import android.util.Log;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ImageView;
@@ -52,6 +53,7 @@ public class PaymentActivity extends AppCompatActivity {
         });
         btn_recharge.setOnClickListener(v -> {
             Intent intent = new Intent(this , RechargeActivity.class);
+            Log.d("TAG", "onCreate: 됫나");
             startActivity(intent);
         });
 
