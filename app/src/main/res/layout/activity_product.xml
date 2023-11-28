@@ -71,18 +71,20 @@
 
     <LinearLayout style="@style/menu_linear">
 
-        <RelativeLayout style="@style/menu_rel">
+        <RelativeLayout
+            style="@style/menu_rel"
+            android:layout_height="match_parent">
 
-            <ImageView
-                android:id="@+id/imgv_rice"
-                style="@style/name_imgv"
-                android:src="@drawable/rg" />
+            <!--            <ImageView-->
+            <!--                android:id="@+id/imgv_rice"-->
+            <!--                style="@style/name_imgv"-->
+            <!--                android:src="" />-->
 
-            <TextView
-                android:id="@+id/tv_rice"
-                style="@style/detail_text"
-                android:layout_below="@+id/imgv_rice"
-                android:text="밥류" />
+            <!--            <TextView-->
+            <!--                android:id="@+id/tv_rice"-->
+            <!--                style="@style/detail_text"-->
+            <!--                android:layout_below="@+id/imgv_rice"-->
+            <!--                android:text="밥류" />-->
         </RelativeLayout>
 
         <RelativeLayout style="@style/menu_rel">
