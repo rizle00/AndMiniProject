@@ -25,7 +25,7 @@ public class DetailActivity extends AppCompatActivity implements View.OnClickLis
     TextView [] tvs = new TextView[4];
     EditText [] edts = new EditText[4];
     List<ProductDTO> list;
-    MemberDTO mDto = new MemberDTO();
+    MemberDTO mDto ;
 
 
 

@@ -6,7 +6,7 @@ import java.util.ArrayList;
 
 public class DAO {
     private static ArrayList<ProductDTO> cart = new ArrayList<>();
-    MemberDTO mDto = new MemberDTO();
+    MemberDTO mDto ;
     ProductDTO pDto = new ProductDTO();
     ArrayList<MemberDTO> mList = new ArrayList<>();
 
