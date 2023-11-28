@@ -29,19 +29,19 @@ public class PaymentActivity extends AppCompatActivity {
         Button btn_pay = findViewById(R.id.btn_pay);
         Button btn_recharge = findViewById(R.id.btn_recharge);
         
-        MemberDTO dto = new MemberDTO();
-        int totalprice = Integer.parseInt(getIntent().getStringExtra("total"));
+
+        int totalprice = getIntent().getIntExtra("total",-1);
         tv_price.setText(""+totalprice);
-        tv_money.setText(""+dto.getMoney());
-        tv_change.setText("" +(dto.getMoney() - getIntent().getIntExtra("total",-1)));
+        tv_money.setText(""+MemberDTO.getMoney());
+        tv_change.setText("" +(MemberDTO.getMoney() - getIntent().getIntExtra("total",-1)));
 
 
         btn_pay.setOnClickListener(v -> {
-            if(dto.getMoney() < totalprice){
+            if(MemberDTO.getMoney() < totalprice){
                 Toast.makeText(this, "잔액이 부족합니다.", Toast.LENGTH_SHORT).show();
             }else{
             Intent intent = new Intent(this,CompleteActivity.class);
-            dto.setMoney(dto.getMoney() - getIntent().getIntExtra("total",-1));
+                MemberDTO.setMoney(MemberDTO.getMoney() - getIntent().getIntExtra("total",-1));
             startActivity(intent);
             }
 

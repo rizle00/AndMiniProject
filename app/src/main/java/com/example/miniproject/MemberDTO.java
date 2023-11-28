@@ -9,6 +9,8 @@ public class MemberDTO {
     static private int money;
 
 
+
+
     public MemberDTO(String id, String pw, String address, int money) {
         this.id = id;
         this.pw = pw;
@@ -16,9 +18,7 @@ public class MemberDTO {
         this.money = money;
     }
 
-    public MemberDTO() {
 
-    }
 
     public String getId() {
         return id;
@@ -44,12 +44,12 @@ public class MemberDTO {
         this.address = address;
     }
 
-    public int getMoney() {
+    public static int getMoney() {
         return money;
     }
 
-    public void setMoney(int money) {
-        this.money = money;
+    public static void setMoney(int money) {
+        MemberDTO.money = money;
     }
 
 
