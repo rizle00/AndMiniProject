@@ -56,9 +56,9 @@ public class CartActivity extends AppCompatActivity {
       /* ArrayList<ArrayList<ProductDTO>> listaaa = new ArrayList<>();
         listaaa.add(ad);*/
         for(int i = 0 ; i < DAO.getCart().size() ; i++) {
-            tv_name.append(DAO.getCart().get(i).getName());
-            tv_amount.append(""+DAO.getCart().get(i).getChoice());
-            tv_price.append(""+DAO.getCart().get(i).getPrice());
+            tv_name.append(DAO.getCart().get(i).getName()+"\n\r");
+            tv_amount.append(""+DAO.getCart().get(i).getChoice()+"\n\r");
+            tv_price.append(""+DAO.getCart().get(i).getPrice()+"\n\r");
             totalprice = totalprice + (DAO.getCart().get(i).getChoice()*DAO.getCart().get(i).getPrice());
         };
         tv_totalprice.setText("총액 : " + totalprice + "원");
