@@ -30,24 +30,14 @@ private final String TAG="C";
 
         Button GoHome=findViewById(R.id.GoHome);
 
-        Intent intent=getIntent();
-        ArrayList<ProductDTO> list =  (ArrayList<ProductDTO>) getIntent().getSerializableExtra("list");
 
-        oderListNameWrite.setText(list.get().getName()+list.get().getName());
+            int total =0;
+        for (int i = 0; i<DAO.getCart().size(); i++){
+            oderListNameWrite.append(DAO.getCart().get(i).getName()+DAO.getCart().get(i).getChoice());
+            total +=  DAO.getCart().get(i).getPrice()*DAO.getCart().get(i).getChoice();
 
-
-        oderListMoneyWrite.setText(list.get().getName());
-
-        startActivity(intent);
-
-
-
-
-
-
-
-
-
+        }
+            oderListMoneyWrite.setText(total);
 
 
 
