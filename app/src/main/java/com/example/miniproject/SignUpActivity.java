@@ -58,7 +58,6 @@ public class SignUpActivity extends AppCompatActivity {
         }
 
     });
-
     }
 
     private final ActivityResultLauncher<Intent> getSearchResult = registerForActivityResult(
@@ -72,17 +71,25 @@ public class SignUpActivity extends AppCompatActivity {
                     }
                 }
             }
-
     );
-    private boolean SignUp(String name,String pw, String address){
-        if(!sharedPreferences.contains(name)){
+    private boolean SignUp(String id,String pw, String address){
+        if(isUseridAvailable(id)){
             SharedPreferences.Editor editor = sharedPreferences.edit(); //데이터를 저장할 수 있는 메소드
-            editor.putString("loginId",name);
-            editor.putString("loginPw",pw);
+            editor.putString(id,id);
+            editor.putString(id+"_pw",pw);
+            editor.putString(id+"_addr",address);
             editor.commit();
             return true;
+        }else{
+            Toast.makeText(SignUpActivity.this, "아이디가 이미 존재합니다.", Toast.LENGTH_SHORT).show();
         }
         return false;
+    }
+
+    private boolean isUseridAvailable(String userid) {
+        String savedUserid = sharedPreferences.getString("loginId", "");
+        return !savedUserid.contains(userid);
+
     }
 
     private void saveLoginStatus(boolean login,String name){
