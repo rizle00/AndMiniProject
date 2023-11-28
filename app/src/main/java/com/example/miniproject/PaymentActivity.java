@@ -43,6 +43,6 @@ public class PaymentActivity extends AppCompatActivity {
             startActivity(intent);
         });
 
-        
+
     }
 }
