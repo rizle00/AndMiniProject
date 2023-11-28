@@ -28,6 +28,7 @@ public class PaymentActivity extends AppCompatActivity {
         tv_money.setText(""+dto.getMoney());
         tv_change.setText("" +(dto.getMoney() - getIntent().getIntExtra("total",-1)));
 
+
         btn_pay.setOnClickListener(v -> {
             Intent intent = new Intent(this,CartActivity.class);
             dto.setMoney(dto.getMoney() - getIntent().getIntExtra("total",-1));
@@ -41,5 +42,7 @@ public class PaymentActivity extends AppCompatActivity {
             Intent intent = new Intent(this , RechargeActivity.class);
             startActivity(intent);
         });
+
+        
     }
 }

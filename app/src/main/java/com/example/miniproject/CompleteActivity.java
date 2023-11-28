@@ -30,7 +30,7 @@ Button GoHome;
 
         Button GoHome=findViewById(R.id.GoHome);
 
-
+        Intent intent=getIntent();
 
 
 
