@@ -35,12 +35,13 @@ public class PaymentActivity extends AppCompatActivity {
         btn_pay.setOnClickListener(v -> {
             if(dto.getMoney() < totalprice){
                 alert.setMessage("잔액이 부족합니다");
-            }
+            }else{
             Intent intent = new Intent(this,CompleteActivity.class);
             ArrayList<ProductDTO> list =  (ArrayList<ProductDTO>) getIntent().getSerializableExtra("list");
             intent.putExtra("list",list);
             dto.setMoney(dto.getMoney() - getIntent().getIntExtra("total",-1));
             startActivity(intent);
+            }
         });
         imgv_close.setOnClickListener(v -> {
             Intent intent = new Intent(this, CartActivity.class);
