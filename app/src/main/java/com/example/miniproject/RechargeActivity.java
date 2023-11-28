@@ -22,12 +22,14 @@ public class RechargeActivity extends AppCompatActivity {
         TextView tv_money = findViewById(R.id.rc_money);
         Button btn_recharge = findViewById(R.id.btn_rechar);
         ImageView imgv_close = findViewById(R.id.imgv_close);
-        tv_money.setText(MemberDTO.getMoney());
+        tv_money.setText(""+MemberDTO.getMoney());
 
 
         btn_recharge.setOnClickListener(v -> {
             Intent intent = new Intent(this , PaymentActivity.class);
-            MemberDTO.setMoney(MemberDTO.getMoney()+Integer.parseInt(edt_recharge.toString()));
+            MemberDTO.setMoney(MemberDTO.getMoney()+Integer.parseInt(edt_recharge.getText().toString()));
+            intent.putExtra("total",getIntent().getIntExtra("total",0));
+
             startActivity(intent);
         });
 
