@@ -180,7 +180,7 @@
         android:id="@+id/btn_cart"
         style="@style/btn_bottom"
         android:background="@drawable/cart"
-        android:text="주문 목록"
+        android:text="장바구니"
         app:backgroundTint="@null" />
 
 

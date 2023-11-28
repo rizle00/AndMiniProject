@@ -116,9 +116,12 @@ public class DetailActivity extends AppCompatActivity implements View.OnClickLis
                 ivs[i].setImageResource(colasI[i]);
 
             }
-            if(dao.pref.contains(list.get(i).getName())){
-                list.get(i).setQuantity(list.get(i).getQuantity()-dao.pref.getInt(list.get(i).getName(),0));
+            for (int j = 0; j<DAO.getCart().size(); j++){
+                if(dao.pref.contains(list.get(i).getName())){
+                    list.get(i).setQuantity(list.get(i).getQuantity()-dao.pref.getInt(list.get(i).getName(),0));
+                }
             }
+
             Log.d("성공?", list.get(i).getQuantity()+"");
 
             tvs[i].setText(list.get(i).getName()+"\n"+list.get(i).getInfo()+"\n"+"가격 : "+list.get(i).getPrice());
@@ -126,16 +129,7 @@ public class DetailActivity extends AppCompatActivity implements View.OnClickLis
 
     }
 
-    public void saveChoice(String name, int i){
-        dao.pref = getSharedPreferences("choice", Activity.MODE_PRIVATE);
-        dao.edit = dao.pref.edit();
-        if(edts[i].getText().length()!=0){
-        dao.edit.putInt(name, Integer.parseInt(edts[i].getText().toString()));
-        }else {
-            dao.edit.putInt(name, 0);
-        }
-        dao.edit.commit();
-    }
+
 
     public ArrayList<ProductDTO> makeCart() {
         ArrayList<ProductDTO> cart = new ArrayList<>();
@@ -145,7 +139,7 @@ public class DetailActivity extends AppCompatActivity implements View.OnClickLis
                 choice = Integer.parseInt(edts[i].getText().toString());
                 if (list.get(i).getQuantity() >= choice) {
                     cart.add(new ProductDTO(list.get(i).getName(), list.get(i).getPrice(), choice));
-                    saveChoice(list.get(i).getName(), i);
+
                 } else {
                     Toast.makeText(getApplicationContext(), list.get(i).getName()+"은/는 재고가 부족합니다\r\n"+
                             list.get(i).getQuantity()+"개 있습니다", Toast.LENGTH_SHORT);
