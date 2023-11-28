@@ -1,12 +1,19 @@
 package com.example.miniproject;
 
+import java.io.Serializable;
 import java.util.ArrayList;
 
-public class ProductDTO {
+public class ProductDTO implements Serializable {
     private String name, info;
     private int price;
     private int quantity;
     private int choice;
+
+    public ProductDTO(String name, int price, int choice) {
+        this.name = name;
+        this.price = price;
+        this.choice = choice;
+    }
 
     public ProductDTO(String name, String info, int price, int quantity) {
         this.name = name;
@@ -17,6 +24,9 @@ public class ProductDTO {
 
     public ProductDTO() {
     }
+
+
+
 
     public int getChoice() {
         return choice;

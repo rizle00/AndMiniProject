@@ -1,13 +1,18 @@
 package com.example.miniproject;
 
+import android.content.SharedPreferences;
+
 import java.util.ArrayList;
 
 public class DAO {
     MemberDTO mDto = new MemberDTO();
     ProductDTO pDto = new ProductDTO();
     ArrayList<MemberDTO> mList = new ArrayList<>();
+    SharedPreferences pref;
+    SharedPreferences.Editor edit;
     public ArrayList<ProductDTO> makeMenu(String name){
         ArrayList<ProductDTO> list = new ArrayList<>();
+
         if(name.equals("gimsT")){
             list.add(new ProductDTO("특공대김밥","특별한 비법소스를 첨가한 야채 김밥", 2500,10));
             list.add(new ProductDTO("참치김밥","참치와 마요네즈가 듬뿍 ", 3500,7));

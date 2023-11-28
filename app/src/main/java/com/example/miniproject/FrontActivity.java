@@ -27,7 +27,7 @@ public class FrontActivity extends AppCompatActivity implements View.OnClickList
                 @Override
                 public void onClick(View view) {
 
-                    Intent intent = new Intent(FrontActivity.this, LogoActivity.class);
+                    Intent intent = new Intent(FrontActivity.this, ProductActivity.class);
                     startActivity(intent);
                 }
             });
