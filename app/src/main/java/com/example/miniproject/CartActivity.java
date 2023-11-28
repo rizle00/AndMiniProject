@@ -39,7 +39,6 @@ public class CartActivity extends AppCompatActivity {
         TextView tv_amount = findViewById(R.id.cartAmount);
         TextView tv_price = findViewById(R.id.cartPrice);
         TextView tv_totalprice = findViewById(R.id.totalprice);
-        MemberDTO mdto = new MemberDTO();
 
         btn_logout.setOnClickListener(v -> {
             Intent intent = new Intent(this, LoginActivity.class); //첫화면으로
