@@ -116,10 +116,10 @@ public class DetailActivity extends AppCompatActivity implements View.OnClickLis
                 ivs[i].setImageResource(colasI[i]);
 
             }
-            for (int j = 0; j<DAO.cart.size(); j++){
+
                 if(dao.pref.contains(list.get(i).getName())){
                     list.get(i).setQuantity(list.get(i).getQuantity()-dao.pref.getInt(list.get(i).getName(),0));
-                }
+
             }
 
             Log.d("성공?", list.get(i).getQuantity()+"");

@@ -78,7 +78,7 @@
                         <ImageView
                             android:id="@+id/imgv_rice"
                             style="@style/name_imgv"
-                            android:src="@drawable/coffee_americano" />
+                            android:src="@drawable/cj" />
 
                         <TextView
                             android:id="@+id/tv_rice"

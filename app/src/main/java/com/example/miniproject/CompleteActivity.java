@@ -46,6 +46,7 @@ private final String TAG="C";
             public void onClick(View v) {
 
                 Intent intent=new Intent(CompleteActivity.this, ProductActivity.class);
+                DAO.cart.clear();
                 startActivity(intent);
             }
         });
