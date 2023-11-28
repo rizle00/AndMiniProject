@@ -30,10 +30,10 @@ public class PaymentActivity extends AppCompatActivity {
         Button btn_recharge = findViewById(R.id.btn_recharge);
         
 
-        int totalprice = getIntent().getIntExtra("total",-1);
+        int totalprice = getIntent().getIntExtra("total",0);
         tv_price.setText(""+totalprice);
         tv_money.setText(""+MemberDTO.getMoney());
-        tv_change.setText("" +(MemberDTO.getMoney() - getIntent().getIntExtra("total",-1)));
+        tv_change.setText("" +(MemberDTO.getMoney() - getIntent().getIntExtra("total",0)));
 
 
         btn_pay.setOnClickListener(v -> {
@@ -52,6 +52,7 @@ public class PaymentActivity extends AppCompatActivity {
         });
         btn_recharge.setOnClickListener(v -> {
             Intent intent = new Intent(this , RechargeActivity.class);
+            intent.putExtra("total",totalprice);
             startActivity(intent);
         });
 
