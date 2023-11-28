@@ -25,6 +25,7 @@ import java.util.ListIterator;
 
 public class CartActivity extends AppCompatActivity {
     int totalprice = 0;
+//    DAO dao = new DAO();
 
     @SuppressLint("SetTextI18n")
     @Override
@@ -48,23 +49,24 @@ public class CartActivity extends AppCompatActivity {
         imgv_close.setOnClickListener(v -> {
             finish();
         });
-        
-        mdto.setCart(new ArrayList<>());
-        ArrayList<ProductDTO> list = (ArrayList<ProductDTO>) getIntent().getSerializableExtra("cart");
 
 
-        for(int i = 0 ; i < list.size() ; i++) {
-            tv_name.append(list.get(i).getName());
-            tv_amount.append(""+list.get(i).getChoice());
-            tv_price.append(""+list.get(i).getPrice());
-            totalprice = totalprice + (list.get(i).getChoice()*list.get(i).getPrice());
+//        ArrayList<ProductDTO> list = new ArrayList<>();
+//        ArrayList<ProductDTO> ad = (ArrayList<ProductDTO>) getIntent().getSerializableExtra("cart");
+      /* ArrayList<ArrayList<ProductDTO>> listaaa = new ArrayList<>();
+        listaaa.add(ad);*/
+        for(int i = 0 ; i < DAO.getCart().size() ; i++) {
+            tv_name.append(DAO.getCart().get(i).getName()+"\n\r");
+            tv_amount.append(""+DAO.getCart().get(i).getChoice()+"\n\r");
+            tv_price.append(""+DAO.getCart().get(i).getPrice()+"\n\r");
+            totalprice = totalprice + (DAO.getCart().get(i).getChoice()*DAO.getCart().get(i).getPrice());
         };
         tv_totalprice.setText("총액 : " + totalprice + "원");
 
         btn_payment.setOnClickListener(v -> {
             Intent intent = new Intent(this, PaymentActivity.class);
             intent.putExtra("total",totalprice);
-            intent.putExtra("list", list);
+
             startActivity(intent);
         });
 

@@ -26,7 +26,7 @@ public class DetailActivity extends AppCompatActivity implements View.OnClickLis
     EditText [] edts = new EditText[4];
     List<ProductDTO> list;
     MemberDTO mDto = new MemberDTO();
-    ArrayList<ProductDTO> cart = new ArrayList<>();
+
 
 
     int[] gimsI = {R.drawable.gy, R.drawable.gt, R.drawable.gn, R.drawable.gm};
@@ -138,9 +138,10 @@ public class DetailActivity extends AppCompatActivity implements View.OnClickLis
     }
 
     public ArrayList<ProductDTO> makeCart() {
+        ArrayList<ProductDTO> cart = new ArrayList<>();
         int choice;
         for (int i = 0; i < 4; i++) {
-            if (edts[i].getTextSize() > 0) {
+            if (edts[i].getText().toString().length() > 0) {
                 choice = Integer.parseInt(edts[i].getText().toString());
                 if (list.get(i).getQuantity() >= choice) {
                     cart.add(new ProductDTO(list.get(i).getName(), list.get(i).getPrice(), choice));
@@ -167,8 +168,8 @@ public class DetailActivity extends AppCompatActivity implements View.OnClickLis
             startActivity(intent);
         } else if(v.getId() == R.id.btn_purchase){
             intent = new Intent(this, CartActivity.class );
-            mDto.setCart(makeCart());
-            intent.putExtra("cart",mDto.getCart());
+            dao.setCart(makeCart());
+            intent.putExtra("cart",dao.getCart());
         }
         startActivity(intent);
     }
