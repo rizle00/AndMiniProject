@@ -11,11 +11,11 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.TextView;
 
+import java.util.ArrayList;
+
 
 public class CompleteActivity extends AppCompatActivity{
 private final String TAG="C";
-Button TextViewList;
-Button GoHome;
 
 
     @Override
@@ -31,6 +31,20 @@ Button GoHome;
         Button GoHome=findViewById(R.id.GoHome);
 
         Intent intent=getIntent();
+        ArrayList<ProductDTO> list =  (ArrayList<ProductDTO>) getIntent().getSerializableExtra("list");
+
+        oderListNameWrite.setText(list.get().getName()+list.get().getName());
+
+
+        oderListMoneyWrite.setText(list.get().getName());
+
+        startActivity(intent);
+
+
+
+
+
+
 
 
 
