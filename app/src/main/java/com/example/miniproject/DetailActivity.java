@@ -141,7 +141,7 @@ public class DetailActivity extends AppCompatActivity implements View.OnClickLis
 
                 } else {
                     Toast.makeText(getApplicationContext(), list.get(i).getName()+"은/는 재고가 부족합니다\r\n"+
-                            list.get(i).getQuantity()+"개 있습니다", Toast.LENGTH_SHORT);
+                            list.get(i).getQuantity()+"개 있습니다", Toast.LENGTH_LONG);
                 }
             } else {
                 choice = 0;
